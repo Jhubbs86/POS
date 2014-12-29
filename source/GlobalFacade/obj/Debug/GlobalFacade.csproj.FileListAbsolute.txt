@@ -1,0 +1,10 @@
+D:\CWXT\CWXT\GlobalFacade\bin\Debug\GlobalFacade.dll
+D:\CWXT\CWXT\GlobalFacade\bin\Debug\GlobalFacade.pdb
+D:\CWXT\CWXT\GlobalFacade\bin\Debug\BusinessMapping.dll
+D:\CWXT\CWXT\GlobalFacade\bin\Debug\microsoft.web.ui.webcontrols.dll
+D:\CWXT\CWXT\GlobalFacade\bin\Debug\Wicresoft.dll
+D:\CWXT\CWXT\GlobalFacade\bin\Debug\BusinessMapping.pdb
+D:\CWXT\CWXT\GlobalFacade\bin\Debug\Wicresoft.pdb
+D:\CWXT\CWXT\GlobalFacade\obj\Debug\GlobalFacade.csprojResolveAssemblyReference.cache
+D:\CWXT\CWXT\GlobalFacade\obj\Debug\GlobalFacade.dll
+D:\CWXT\CWXT\GlobalFacade\obj\Debug\GlobalFacade.pdb

@@ -1,0 +1,221 @@
+<public:component>
+	<public:attach event=onmouseover onevent="dgItemOnMouseOver()" />
+	<public:attach event=onmouseout onevent="dgItemOnMouseOut()" />
+	<public:attach event=onclick onevent="dgItemOnClick()" />
+	<public:method name="dgItemOnDbClick" />
+	<public:method name="dgItemOnDbClick_Popup" />
+    <public:method name="dgItemOnDbClick_Popup1" />
+	<public:method name="dgItemOnDbClick_Popup_Refresh" />
+	<public:method name="dgItemOnContextMenu" />
+</public:component>
+
+<script language="javascript">
+
+    var originalColor = null;
+    var obj = null;
+
+    function dgItemOnMouseOver() {
+        obj = window.event.srcElement;
+        while (obj.tagName != "TR") {
+            obj = obj.parentElement;
+            if (obj == null)
+                break;
+        }
+        originalColor = obj.style.backgroundColor;
+        obj.style.backgroundColor = "#d1d1d1";
+    }
+
+    function dgItemOnMouseOut() {
+        if (originalColor != null) {
+            obj.style.backgroundColor = originalColor;
+        }
+    }
+
+    function dgItemOnClick() {
+        var eo = window.event.srcElement;
+        var tr = eo;
+        var tbl;
+        var o;
+
+        while (tr.tagName != "TR") {
+            tr = tr.parentElement;
+            if (tr == "undefined" || tr == null)
+                return;
+        }
+
+        tbl = tr;
+        while (tbl.tagName != "TABLE") {
+            tbl = tbl.parentElement;
+            if (tbl == "undefined" || tbl == null)
+                return;
+        }
+
+        // 如果直接是点击Checkbox，则让系统直接处理
+        if (eo.tagName == "INPUT" && eo.type == "checkbox") {
+            //Alex
+            for (var i = 1; i < tbl.rows.length; i++) {
+                if (i % 2 == 0) {
+                    if (!tbl.rows[i].cells[0].children[0].checked)
+                        tbl.rows[i].style.backgroundColor = "#e1e1e1";
+                    else
+                        tbl.rows[i].style.backgroundColor = "#70B8F0";
+                }
+                else {
+                    if (!tbl.rows[i].cells[0].children[0].checked)
+                        tbl.rows[i].style.backgroundColor = "#ffffff";
+                    else
+                        tbl.rows[i].style.backgroundColor = "#70B8F0";
+                }
+            }
+            var tt = eo;
+            while (tt.tagName != "TR") {
+                tt = tt.parentElement;
+                if (tt == "undefined" || tt == null)
+                    return;
+            }
+            //		
+            //		tt.style.backgroundColor = "#70B8F0";
+            if (eo.checked)
+                originalColor = "#70B8F0";
+            else
+                originalColor = tt.style.backgroundColor;
+
+            return;
+        }
+
+        // Radio	
+        if (eo.tagName == "INPUT" && eo.type == "radio") {
+            for (var i = 1; i < tbl.rows.length; i++) {
+                tbl.rows[i].cells[0].children[0].checked = false;
+            }
+            eo.checked = true;
+
+            //Alex
+            for (var i = 1; i < tbl.rows.length; i++) {
+                if (i % 2 == 0) {
+                    tbl.rows[i].style.backgroundColor = "#e1e1e1";
+                }
+                else {
+                    tbl.rows[i].style.backgroundColor = "#ffffff";
+                }
+            }
+            var tt = eo;
+            while (tt.tagName != "TR") {
+                tt = tt.parentElement;
+                if (tt == "undefined" || tt == null)
+                    return;
+            }
+
+            tt.style.backgroundColor = "#70B8F0";
+            originalColor = "#70B8F0";
+            return;
+        }
+
+        // 点击的不是Checkbox or Radio
+        o = tr.children[0].children[0];
+        if (o != "undefined" && o != null && o.tagName == "INPUT" && o.type == "checkbox") {
+            o.checked = !o.checked;
+
+            //Alex
+            for (var i = 1; i < tbl.rows.length; i++) {
+                if (i % 2 == 0) {
+                    if (!tbl.rows[i].cells[0].children[0].checked)
+                        tbl.rows[i].style.backgroundColor = "#e1e1e1";
+                    else
+                        tbl.rows[i].style.backgroundColor = "#70B8F0";
+                }
+                else {
+                    if (!tbl.rows[i].cells[0].children[0].checked)
+                        tbl.rows[i].style.backgroundColor = "#ffffff";
+                    else
+                        tbl.rows[i].style.backgroundColor = "#70B8F0";
+                }
+            }
+
+            var tt = eo;
+            while (tt.tagName != "TR") {
+                tt = tt.parentElement;
+                if (tt == "undefined" || tt == null)
+                    return;
+            }
+
+            if (o.checked)
+                originalColor = "#70B8F0";
+            else
+                originalColor = tt.style.backgroundColor;
+        }
+        else if (o != "undefined" && o != null && o.tagName == "INPUT" && o.type == "radio") {
+            for (var i = 1; i < tbl.rows.length; i++) {
+                tbl.rows[i].cells[0].children[0].checked = false;
+            }
+            o.checked = true;
+
+            //Alex
+            for (var i = 1; i < tbl.rows.length; i++) {
+                if (i % 2 == 0) {
+                    tbl.rows[i].style.backgroundColor = "#e1e1e1";
+                }
+                else {
+                    tbl.rows[i].style.backgroundColor = "#ffffff";
+                }
+            }
+            var tt = o;
+            while (tt.tagName != "TR") {
+                tt = tt.parentElement;
+                if (tt == "undefined" || tt == null)
+                    return;
+            }
+
+            tt.style.backgroundColor = "#70B8F0";
+            originalColor = "#70B8F0";
+        }
+    }
+
+    function dgItemOnDbClick(url, id, pkid) {
+        DGGetAjaxData(id, pkid);
+        location.assign(url);
+    }
+
+    function dgItemOnDbClick_Popup(url, id, pkid) {
+        DGGetAjaxData(id, pkid);
+        return OpenModalDialog(url);
+    }
+
+    function dgItemOnDbClick_Popup1(url, id, pkid) {
+        DGGetAjaxData(id, pkid);
+        return OpenModalDialog1(url);
+    }
+
+    function dgItemOnDbClick_Popup_Refresh(url, refreshControlID, id, pkid) {
+        if (dgItemOnDbClick_Popup(url, id, pkid)) {
+            __doPostBack(refreshControlID, '');
+        }
+    }
+
+    function dgItemOnContextMenu(cmName) {
+        alert(cmName);
+        /*
+        window.event.cancelBubble = true;
+        window.event.returnValue = null;
+	
+        if(cmName.length != 0)
+        {
+        var obj = window.document.all(cmName);
+        if(obj == null)
+        {
+        obj = window.document.getElementById(cmName);
+        }
+        if(obj != null)
+        {
+        var popupWnd = window.createPopup();
+        popupWnd.document.body.innerHTML = obj.innerHTML;
+        popupWnd.show(window.event.clientX, window.event.clientY,100,0,window.document.body);
+        var realHeight = popupWnd.scrollHeight;
+        popupWnd.hide();
+        popupWnd.show(window.event.clientX, window.event.clientY,100,realHeight,window.document.body);
+        }
+        }
+        */
+    }
+</script>
+

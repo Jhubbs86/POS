@@ -1,0 +1,45 @@
+#body
+{
+	background-color: #f0f0f0;
+}
+.TreeView
+{ 
+ /* background-color: #f0f0f0;*/
+  border: 0px solid  #f0f0f0;
+  padding: 1px;
+  cursor:pointer;
+} 
+
+.TreeNode
+{
+  font-family: verdana;
+  font-size: 12px;
+  cursor:pointer;
+} 
+
+.TreeNodeRow
+{
+  height: 20px;  
+  padding: 3px;  
+  cursor:pointer;
+  color:#393939;
+}
+
+.HoverTreeNodeRow
+{
+  background-color:#b5d3ef;
+  height: 20px;  
+  padding: 3px;  
+  cursor:pointer;
+  color:#393939;
+}
+
+.SelectedTreeNodeRow
+{
+	/*background-color: #f0f0f0;*/
+  background-color:  #1b6896;
+  height: 20px;  
+  padding: 3px;
+  color:#fff;
+  cursor:pointer;
+}

@@ -1,0 +1,4 @@
+D:\CWXT\CWXT\Wicresoft\bin\Debug\Wicresoft.dll
+D:\CWXT\CWXT\Wicresoft\bin\Debug\Wicresoft.pdb
+D:\CWXT\CWXT\Wicresoft\obj\Debug\Wicresoft.dll
+D:\CWXT\CWXT\Wicresoft\obj\Debug\Wicresoft.pdb

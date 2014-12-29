@@ -1,0 +1,45 @@
+<!--页面验证开始-->
+<asp:validationsummary id="ValidationSummary1" CssClass="txt9" ShowSummary="True" HeaderText="您需要修改以下几点，才能成功保存" EnableClientScript="True" DisplayMode="BulletList" Runat="server"></asp:validationsummary>
+<asp:requiredfieldvalidator id="RequiredFieldValidator1" EnableClientScript="True" Runat="server" Display="None" ErrorMessage="名称不能为空" ControlToValidate="tbxName"></asp:requiredfieldvalidator>
+<asp:customvalidator id="valiateName" Runat="server" Display="None" ErrorMessage="名称不能重复" Enabled="True"></asp:customvalidator>
+<!--页面验证结束-->
+<table class="panel" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<table cellspacing="0" cellpadding="5">
+				<tr>
+					<td class="SmallTitle">
+						<nobr>基本信息</nobr>
+					</td>
+					<!--小标题-->
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<table class="detailInfo" cellspacing="3" cellpadding="3">
+				<tr>
+					<td class="Field">
+						<nobr>名称</nobr>
+					</td>
+					<td width="50%">
+						<asp:textbox id="tbxName" Width="80%" runat="server"></asp:textbox>
+					</td>
+					<td class="Field">
+						<nobr></nobr>
+					</td>
+					<td width="50%"></td>
+				</tr>
+				<tr>
+					<td class="FieldTop">
+						<nobr>备注</nobr>
+					</td>
+					<td width="50%">
+						<asp:textbox id="tbxMemo" Width="80%" runat="server" Height="80px" TextMode="MultiLine"></asp:textbox>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<TREENODETYPES>
+	<TREENODETYPE TYPE="0" IMAGEURL="image/f_norm.gif" EXPANDEDIMAGEURL="image/f_new.gif" CHILDTYPE="1"  
+		DefaultStyle="border:0px; padding:2 2 0 2; font-family:Tahoma; font-size:9pt; color:#393939" 
+		HoverStyle="border:solid 1px Gray; background-color:#f1f1f1;color:#393939; padding:2 2 0 2;" 
+		SelectedStyle="border:solid 1px Gray; background-color:#f1f1f1;color:#393939; padding:2 2 0 2" />
+	<TREENODETYPE TYPE="1" IMAGEURL="image/icon_mini_search.gif" EXPANDEDIMAGEURL="image/icon_mini_profile.gif" CHILDTYPE="2"
+		DefaultStyle="border:0px; padding:2 2 0 2; color:#393939" 
+		HoverStyle="border:solid 1px Gray; background-color:#f1f1f1;color:#393939; padding:2 2 0 2" 
+		SelectedStyle="border:solid 1px Gray; background-color:#f1f1f1;color:#393939; padding:2 2 0 2" />
+	<TREENODETYPE TYPE="2" IMAGEURL="image/icon_mini_memberlist.gif"
+		DefaultStyle="border:0px; padding:2 2 0 2; color:#393939;" 
+		HoverStyle="border:solid 1px Gray; background-color:#f1f1f1;color:#393939; padding:2 2 0 2" 
+		SelectedStyle="border:solid 1px Gray; background-color:#f1f1f1;color:#393939; padding:2 2 0 2" />
+</TREENODETYPES>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<System>
+	<DBConfigure>
+		<Connectionstring></Connectionstring>
+		<DBFactory></DBFactory>
+		<BusinessLogic>BusinessMapping</BusinessLogic>
+	</DBConfigure>
+	<ResourceManage>
+		<Resource></Resource>
+		<Language></Language>
+	</ResourceManage>
+</System>

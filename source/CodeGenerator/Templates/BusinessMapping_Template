@@ -1,0 +1,25 @@
+using System;
+using Wicresoft.BusinessObject;
+
+namespace BusinessMapping
+{
+	/// <summary>
+	/// <%ObjectName%> -- Business Mapping Model
+	/// </summary>
+	public class <%ObjectName%> : BusinessObject
+	{
+		public <%ObjectName%>()
+		{
+			this.TableName = "<%ObjectName%>";
+			
+			<%Initialization%>
+		}
+
+		public override BusinessObject Clone()
+		{
+			return new <%ObjectName%>();
+		}
+
+		<%Declaration%>
+	}
+}

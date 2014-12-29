@@ -1,0 +1,31 @@
+﻿<public:component>
+	<public:method name="ImgBtnOnClick" />
+	<public:method name="ImgBtnOnMouseDown" />
+	<public:method name="ImgBtnOnMouseUp" />
+	<public:method name="ImgBtnConfirmDelete" />
+</public:component>
+
+<script language="jscript">
+
+function ImgBtnOnClick(url)
+{
+	return showDialog(url, "720px", "550px", false, null);
+}
+
+function ImgBtnOnMouseDown(newSrc)
+{
+	window.event.srcElement.src = newSrc;
+	window.event.cancelBubble = true;
+}
+
+function ImgBtnOnMouseUp(newSrc)
+{
+	window.event.srcElement.src = newSrc;
+	window.event.cancelBubble = true;
+}
+
+function ImgBtnConfirmDelete()
+{
+	if( window.confirm("确定要删除吗？") ) {return true;} else{return false;}
+}
+</script>

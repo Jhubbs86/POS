@@ -1,0 +1,15 @@
+D:\CWXT\CWXT\BusinessView\bin\Debug\BusinessView.dll
+D:\CWXT\CWXT\BusinessView\bin\Debug\BusinessView.pdb
+D:\CWXT\CWXT\BusinessView\bin\Debug\BusinessRule.dll
+D:\CWXT\CWXT\BusinessView\bin\Debug\GlobalFacade.dll
+D:\CWXT\CWXT\BusinessView\bin\Debug\Wicresoft.dll
+D:\CWXT\CWXT\BusinessView\bin\Debug\Microsoft.Web.UI.WebControls.dll
+D:\CWXT\CWXT\BusinessView\bin\Debug\BusinessMapping.dll
+D:\CWXT\CWXT\BusinessView\bin\Debug\AjaxPro.dll
+D:\CWXT\CWXT\BusinessView\bin\Debug\BusinessRule.pdb
+D:\CWXT\CWXT\BusinessView\bin\Debug\GlobalFacade.pdb
+D:\CWXT\CWXT\BusinessView\bin\Debug\Wicresoft.pdb
+D:\CWXT\CWXT\BusinessView\bin\Debug\BusinessMapping.pdb
+D:\CWXT\CWXT\BusinessView\obj\Debug\BusinessView.csprojResolveAssemblyReference.cache
+D:\CWXT\CWXT\BusinessView\obj\Debug\BusinessView.dll
+D:\CWXT\CWXT\BusinessView\obj\Debug\BusinessView.pdb

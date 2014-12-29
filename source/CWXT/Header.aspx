@@ -1,0 +1,17 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Header.aspx.cs" Inherits="CWXT.Header" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Header</title>
+</head>
+<body leftmargin="0" topmargin="0">
+    <form id="Form1" method="post" runat="server">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" height="75" style="background-image: url(image/head_bg.gif); background-repeat: repeat;">
+            <tr>
+                <%--<td><img src="image/head_logo.gif" border="0"></td>--%>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

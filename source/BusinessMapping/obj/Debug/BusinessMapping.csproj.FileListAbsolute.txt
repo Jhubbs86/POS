@@ -1,0 +1,7 @@
+D:\CWXT\CWXT\BusinessMapping\bin\Debug\BusinessMapping.dll
+D:\CWXT\CWXT\BusinessMapping\bin\Debug\BusinessMapping.pdb
+D:\CWXT\CWXT\BusinessMapping\bin\Debug\Wicresoft.dll
+D:\CWXT\CWXT\BusinessMapping\bin\Debug\Wicresoft.pdb
+D:\CWXT\CWXT\BusinessMapping\obj\Debug\BusinessMapping.csprojResolveAssemblyReference.cache
+D:\CWXT\CWXT\BusinessMapping\obj\Debug\BusinessMapping.dll
+D:\CWXT\CWXT\BusinessMapping\obj\Debug\BusinessMapping.pdb

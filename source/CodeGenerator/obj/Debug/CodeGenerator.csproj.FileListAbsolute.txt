@@ -1,0 +1,13 @@
+D:\CWXT\CWXT\CodeGenerator\bin\Debug\CodeGenerator.exe.config
+D:\CWXT\CWXT\CodeGenerator\bin\Debug\CodeGenerator.exe
+D:\CWXT\CWXT\CodeGenerator\bin\Debug\CodeGenerator.pdb
+D:\CWXT\CWXT\CodeGenerator\bin\Debug\BusinessMapping.dll
+D:\CWXT\CWXT\CodeGenerator\bin\Debug\Wicresoft.dll
+D:\CWXT\CWXT\CodeGenerator\bin\Debug\BusinessMapping.pdb
+D:\CWXT\CWXT\CodeGenerator\bin\Debug\Wicresoft.pdb
+D:\CWXT\CWXT\CodeGenerator\obj\Debug\CodeGenerator.csprojResolveAssemblyReference.cache
+D:\CWXT\CWXT\CodeGenerator\obj\Debug\CodeGenerator.FrmMain.resources
+D:\CWXT\CWXT\CodeGenerator\obj\Debug\CodeGenerator.Properties.Resources.resources
+D:\CWXT\CWXT\CodeGenerator\obj\Debug\CodeGenerator.csproj.GenerateResource.Cache
+D:\CWXT\CWXT\CodeGenerator\obj\Debug\CodeGenerator.exe
+D:\CWXT\CWXT\CodeGenerator\obj\Debug\CodeGenerator.pdb

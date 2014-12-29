@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="VerificationCodeManager.ascx.cs" Inherits="CWXT.CustomControls.VerificationCodeManager"  TargetSchema="http://schemas.microsoft.com/intellisense/ie5"%>
+<asp:ImageButton ID="btnVerficationCode" CausesValidation="False" AlternateText="如果看不清验证码，请点击图片进行刷新" Runat="server" ImageUrl="VerificationCode.aspx"></asp:ImageButton>
