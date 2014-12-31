@@ -41,6 +41,7 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
 			)
      VALUES
            (
@@ -49,6 +50,7 @@ BEGIN
 				,0
 				,1
 				,1
+				,0
 			)
 END
 
@@ -61,6 +63,7 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
 			)
      VALUES
            (
@@ -69,6 +72,7 @@ BEGIN
 				,0
 				,2
 				,1
+				,0
 			)
 END
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '业务管理' HAVING(COUNT(*)>0))
@@ -80,6 +84,7 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
 			)
      VALUES
            (
@@ -88,6 +93,7 @@ BEGIN
 				,0
 				,3
 				,1
+				,0
 			)
 END
 
@@ -100,9 +106,11 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
+
 			)
-     SELECT '用户管理',NULL,Menu.PKID,1,1
-     FROM   Menu WHERE IsValid = 1 AND [ChineseName] = '系统管理'
+     SELECT '用户管理','Header.aspx',Menu.PKID,1,1,0
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
 END
 
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '权限管理' HAVING(COUNT(*)>0))
@@ -114,9 +122,10 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
 			)
-     SELECT '权限管理',NULL,Menu.PKID,2,1
-     FROM   Menu WHERE IsValid = 1 AND [ChineseName] = '系统管理'
+     SELECT '权限管理','Header.aspx',Menu.PKID,2,1,0
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
 END
 
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '用户组管理' HAVING(COUNT(*)>0))
@@ -128,9 +137,10 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
 			)
-     SELECT '用户组管理','SystemManage/RoleManage/RoleList.aspx',Menu.PKID,1,1
-     FROM   Menu WHERE IsValid = 1 AND [ChineseName] = '用户管理'
+     SELECT '用户组管理','SystemManage/RoleManage/RoleList.aspx',Menu.PKID,1,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '用户管理'
 END
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '用户信息管理' HAVING(COUNT(*)>0))
 BEGIN
@@ -141,9 +151,10 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
 			)
-     SELECT '用户信息管理','SystemManage/UserManage/UserList.aspx',Menu.PKID,2,1
-     FROM   Menu WHERE IsValid = 1 AND [ChineseName] = '用户管理'
+     SELECT '用户信息管理','SystemManage/UserManage/UserList.aspx',Menu.PKID,2,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '用户管理'
 END
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '修改口令（个人）' HAVING(COUNT(*)>0))
 BEGIN
@@ -154,9 +165,10 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
 			)
-     SELECT '修改口令（个人）','SystemManage/UserManage/UserModifyPassword.aspx',Menu.PKID,3,1
-     FROM   Menu WHERE IsValid = 1 AND [ChineseName] = '用户管理'
+     SELECT '修改口令（个人）','SystemManage/UserManage/UserModifyPassword.aspx',Menu.PKID,3,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '用户管理'
 END
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '切换用户' HAVING(COUNT(*)>0))
 BEGIN
@@ -167,9 +179,10 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
 			)
-     SELECT '切换用户','Logout.aspx?__action=switch',Menu.PKID,4,1
-     FROM   Menu WHERE IsValid = 1 AND [ChineseName] = '用户管理'
+     SELECT '切换用户','Logout.aspx?__action=switch',Menu.PKID,4,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '用户管理'
 END
 
 
@@ -182,9 +195,10 @@ BEGIN
 				,[Parent]
 				,[DisplayOrder]
 				,[IsValid]
+				,[IsLeaf]
 			)
-     SELECT '界面权限管理','SystemManage/PermissionManage/UIPermission.aspx',Menu.PKID,1,1
-     FROM   Menu WHERE IsValid = 1 AND [ChineseName] = '权限管理'
+     SELECT '界面权限管理','SystemManage/PermissionManage/UIPermission.aspx',Menu.PKID,1,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '权限管理'
 END
 
 /*
@@ -204,7 +218,7 @@ BEGIN
 				,[Memo]
 			)
      SELECT	1,Menu.PKID,1,1,GETDATE(),1,GETDATE(),NULL
-	 FROM	Menu WHERE IsValid = 1
+	 FROM	[CWXT].[dbo].[Menu] WHERE IsValid = 1
 END
 
 /*

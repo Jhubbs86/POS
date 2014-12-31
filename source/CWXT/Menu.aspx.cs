@@ -64,9 +64,8 @@ namespace CWXT
                     node.Text = dr["ChineseName"].ToString();
                     if (dr["URL"].ToString() != string.Empty)
                     {
-
                         node.Target = "header";
-                        node.NavigateUrl = dr["URL"].ToString();
+                        node.NavigateUrl = dr["URL"].ToString() + "?menuid=" + dr["PKID"].ToString();
                     }
                     DataTable subTempTable = GetMenusForParentID(dr["PKID"].ToString());
                     FillNode(node, subTempTable);
