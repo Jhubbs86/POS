@@ -4,14 +4,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Header</title>
+    <script language="javascript">
+        function MenuItemClick(obj,url)
+        {
+            obj.target = "main";
+            obj.href = url;
+            obj.click();
+        }
+    </script>
 </head>
+
 <body leftmargin="0" topmargin="0">
     <form id="Form1" method="post" runat="server">
-        <table cellpadding="0" cellspacing="0" border="0" width="100%" height="75" style="background-image: url(image/head_bg.gif); background-repeat: repeat;">
-            <tr>
-                <%--<td><img src="image/head_logo.gif" border="0"></td>--%>
-            </tr>
-        </table>
+        <div id="divContainer" runat="server">
+        </div>
     </form>
 </body>
 </html>

@@ -27,7 +27,7 @@ namespace CWXT
                 + "LEFT JOIN RoleMenu ON RoleMenu.FK_Role = dbo.[User].FK_Role WHERE dbo.[User].PKID = " + GlobalFacade.SystemContext.GetContext().UserID.ToString() + ")";
 
                 DataRoots = new Wicresoft.Session.Session().SqlHelper.ExcuteDataTable(DataRoots,
-                "SELECT * FROM Menu WHERE IsValid = 1 AND ISNULL(URL,'') = '' AND Parent = 0 AND " + strWhere
+                "SELECT * FROM Menu WHERE IsLeaf=0 AND IsValid = 1 AND ISNULL(URL,'') = '' AND Parent = 0 AND " + strWhere
                 + " ORDER BY [Parent],[DisplayOrder]", CommandType.Text);
 
                 FillMenus(DataRoots);
@@ -64,7 +64,8 @@ namespace CWXT
                     node.Text = dr["ChineseName"].ToString();
                     if (dr["URL"].ToString() != string.Empty)
                     {
-                        node.Target = "main";
+
+                        node.Target = "header";
                         node.NavigateUrl = dr["URL"].ToString();
                     }
                     DataTable subTempTable = GetMenusForParentID(dr["PKID"].ToString());
@@ -77,7 +78,7 @@ namespace CWXT
         public DataTable GetMenusForParentID(string parent)
         {
             return new Wicresoft.Session.Session().SqlHelper.ExcuteDataTable(null,
-                "SELECT * FROM Menu WHERE IsValid = 1 AND [Parent]=" + parent +
+                "SELECT * FROM Menu WHERE IsLeaf=0 AND IsValid = 1 AND [Parent]=" + parent +
                 " AND " + strWhere + " ORDER BY [Parent],[DisplayOrder]", CommandType.Text);
         }
         #endregion

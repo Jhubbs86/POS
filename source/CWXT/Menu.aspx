@@ -29,7 +29,7 @@
         }
     </script>
 </head>
-<body class="menu" onselectstart="return false;" onload="TopBannerSwitcher();">
+<body class="menu" onselectstart="return false;" >
     <form id="Form1" method="post" runat="server">
         <table width="100%" border="0" cellpadding="3" cellspacing="0">
             <tr>
