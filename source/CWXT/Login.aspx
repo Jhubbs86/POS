@@ -39,7 +39,7 @@
         body
         {
             margin-left: auto;
-            margin-top: 180px;
+            margin-top: 300px;
             margin-right: auto;
             margin-bottom: 0px;
         }
@@ -75,7 +75,7 @@
         -->
     </style>
 </head>
-<body onpaste="return false;" style="text-align: center">
+<body onpaste="return false;" style="text-align: center; background: url('image/bg.jpg') no-repeat center fixed;">
     <form id="Form1" method="post" runat="server">
         <table width="225" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
@@ -85,6 +85,11 @@
                             <td valign="center">
                                 <div style="text-align: left">
                                     <table class="txt" width="100%">
+                                        <tr>
+                                            <td colspan="2">
+                                                <span style="font-size:x-large ; align-content:center; ">村务管理系统</span>
+                                            </td>
+                                        </tr>
                                         <tr>
                                             <td width="40">用户名
                                             </td>
@@ -99,14 +104,6 @@
                                                 <asp:TextBox ID="tbxPassword" TabIndex="2" runat="server" Width="100%" TextMode="Password"></asp:TextBox>
                                             </td>
                                         </tr>
-                                        <%--<tr>
-                                        <td width="40">
-                                            验证码
-                                        </td>
-                                        <td width="120">
-                                            <nobr><asp:textbox id="tbxVerifyNumber" tabIndex="3" autocomplete="off" Runat="server" Width="50%"></asp:textbox>&nbsp;&nbsp;<uc1:verificationcodemanager id="ucVerificationCodeManager" runat="server"></uc1:verificationcodemanager></nobr>
-                                        </td>
-                                    </tr>--%>
                                         <tr>
                                             <td width="40"></td>
                                             <td align="right">&nbsp;&nbsp;<asp:ImageButton ID="btnLogin" TabIndex="4" runat="server" Width="44"

@@ -105,6 +105,7 @@
     <Content Include="image\bbmbpz.gif" />
     <Content Include="image\bbpzgl.gif" />
     <Content Include="image\bbsqgl.gif" />
+    <Content Include="image\bg.jpg" />
     <Content Include="image\bottom_bg.gif" />
     <Content Include="image\BTN_COPY_DOWN.gif" />
     <Content Include="image\BTN_COPY_UP.gif" />
