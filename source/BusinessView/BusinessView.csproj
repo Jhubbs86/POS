@@ -42,8 +42,6 @@
   <ItemGroup>
     <Compile Include="BaseData\District.cs" />
     <Compile Include="Common.cs" />
-    <Compile Include="OperationManage\CWInfo.cs" />
-    <Compile Include="OperationManage\CWPerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemManage\OperationLog.cs" />
     <Compile Include="SystemManage\Role.cs" />
@@ -66,7 +64,9 @@
       <Name>Wicresoft</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="OperationManage\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
