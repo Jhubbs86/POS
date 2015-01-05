@@ -111,21 +111,6 @@ BEGIN
      SELECT '用户管理','SystemManage/UserManage/UserList.aspx',Menu.PKID,2,1,1
      FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
 END
-IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '修改口令' HAVING(COUNT(*)>0))
-BEGIN
-     INSERT INTO [CWXT].[dbo].[Menu]
-           (
-				[ChineseName]
-				,[URL]
-				,[Parent]
-				,[DisplayOrder]
-				,[IsValid]
-				,[IsLeaf]
-			)
-     SELECT '修改口令','SystemManage/UserManage/UserModifyPassword.aspx',Menu.PKID,3,1,1
-     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
-END
-
 
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '权限管理' HAVING(COUNT(*)>0))
 BEGIN
@@ -138,7 +123,22 @@ BEGIN
 				,[IsValid]
 				,[IsLeaf]
 			)
-     SELECT '权限管理','SystemManage/PermissionManage/UIPermission.aspx',Menu.PKID,4,1,1
+     SELECT '权限管理','SystemManage/PermissionManage/UIPermission.aspx',Menu.PKID,3,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
+END
+
+IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '修改口令' HAVING(COUNT(*)>0))
+BEGIN
+     INSERT INTO [CWXT].[dbo].[Menu]
+           (
+				[ChineseName]
+				,[URL]
+				,[Parent]
+				,[DisplayOrder]
+				,[IsValid]
+				,[IsLeaf]
+			)
+     SELECT '修改口令','SystemManage/UserManage/UserModifyPassword.aspx',Menu.PKID,4,1,1
      FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
 END
 
