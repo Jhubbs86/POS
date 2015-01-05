@@ -180,4 +180,10 @@
   <data name="validNullListToExcel" xml:space="preserve">
     <value>列表没有数据不能导出</value>
   </data>
+  <data name="IndusValueStyle" xml:space="preserve">
+    <value>工业总产值必须是数值型</value>
+  </data>
+  <data name="TotalPepsStyle" xml:space="preserve">
+    <value>总人数必须是大于等于零的整数</value>
+  </data>
 </root>

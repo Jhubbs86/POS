@@ -101,6 +101,20 @@ namespace BusinessRule
             return (boc.Count > 0) ? false : true;
         }
 
+        public bool IsFieldExclusiveM(string fieldName, string fieldValue, string ObjectName, bool stringField, int objectPKID)
+        {
+            BusinessFilter filter = new BusinessFilter(ObjectName);
+            filter.AddFilterItem("PKID", objectPKID.ToString(), Operation.NotEqual, FilterType.NumberType, AndOr.AND);
+            filter.AddFilterItem(fieldName, fieldValue, Operation.Equal, stringField ? FilterType.StringType : FilterType.NumberType, AndOr.AND);
+
+            BusinessObjectCollection boc = new BusinessObjectCollection(ObjectName);
+            boc.SessionInstance = new Wicresoft.Session.Session();
+            boc.AddFilter(filter);
+            boc.Query();
+
+            return (boc.Count > 0) ? false : true;
+        }
+
         public void UpDateDataTimeColumn(string strtblName, string strPKID, string strColumnName)
         {
             string sqlUpDateDataTimeColumn = "UPDATE " + strtblName + " SET " + strColumnName + " = NULL " + " WHERE PKID = " + strPKID;

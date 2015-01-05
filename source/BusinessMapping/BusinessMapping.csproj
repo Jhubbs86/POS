@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="BaseData\Region\Dictionary_RegionDetail.cs" />
     <Compile Include="BaseData\Region\District.cs" />
+    <Compile Include="OperationManage\CWInfo.cs" />
+    <Compile Include="OperationManage\CWPerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemManage\Dictionary.cs" />
     <Compile Include="SystemManage\Menu.cs" />
@@ -54,9 +56,7 @@
     <Compile Include="SystemManage\UserLevel.cs" />
     <Compile Include="SystemManage\UserType.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="OperationManage\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Wicresoft\Wicresoft.csproj">
       <Project>{748e6133-a3bc-4b99-a760-db502ec071b2}</Project>

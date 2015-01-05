@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Library\AjaxPro.dll</HintPath>
     </Reference>
+    <Reference Include="GroupRadioButton">
+      <HintPath>..\Library\GroupRadioButton.dll</HintPath>
+    </Reference>
     <Reference Include="M2G.Web.UI">
       <HintPath>..\Library\M2G.Web.UI.dll</HintPath>
     </Reference>
@@ -298,6 +301,12 @@
     <Content Include="Menu.aspx" />
     <EmbeddedResource Include="Resources\AlertScript.js" />
     <EmbeddedResource Include="Resources\Calendar30.js" />
+    <Content Include="OperationManage\CWInfoManage\CWInfo.ascx" />
+    <Content Include="OperationManage\CWInfoManage\CWInfoAdd.aspx" />
+    <Content Include="OperationManage\CWInfoManage\CWInfoEdit.aspx" />
+    <Content Include="OperationManage\CWInfoManage\CWInfoList.aspx" />
+    <Content Include="OperationManage\CWInfoManage\CWInfoQuery.aspx" />
+    <Content Include="OperationManage\CWInfoManage\CWInfoView.aspx" />
     <Content Include="Resources\Common.js" />
     <EmbeddedResource Include="Resources\CustomerSiteStyle.css" />
     <EmbeddedResource Include="Resources\DataGrid.htc" />
@@ -568,6 +577,48 @@
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenuConfig.cs" />
+    <Compile Include="OperationManage\CWInfoManage\CWInfo.ascx.cs">
+      <DependentUpon>CWInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfo.ascx.designer.cs">
+      <DependentUpon>CWInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoAdd.aspx.cs">
+      <DependentUpon>CWInfoAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoAdd.aspx.designer.cs">
+      <DependentUpon>CWInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoEdit.aspx.cs">
+      <DependentUpon>CWInfoEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoEdit.aspx.designer.cs">
+      <DependentUpon>CWInfoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoList.aspx.cs">
+      <DependentUpon>CWInfoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoList.aspx.designer.cs">
+      <DependentUpon>CWInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoQuery.aspx.cs">
+      <DependentUpon>CWInfoQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoQuery.aspx.designer.cs">
+      <DependentUpon>CWInfoQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoView.aspx.cs">
+      <DependentUpon>CWInfoView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperationManage\CWInfoManage\CWInfoView.aspx.designer.cs">
+      <DependentUpon>CWInfoView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProcessFlow\AccountController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\EmbedResources.cs" />
@@ -743,7 +794,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaseData\" />
-    <Folder Include="OperationManage\" />
     <Folder Include="UploadFiles\" />
   </ItemGroup>
   <ItemGroup>
