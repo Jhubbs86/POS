@@ -5,8 +5,7 @@
 <head>
     <title>Header</title>
     <script language="javascript">
-        function MenuItemClick(obj,url)
-        {
+        function MenuItemClick(obj, url) {
             obj.target = "main";
             obj.href = url;
             obj.click();
@@ -16,8 +15,14 @@
 
 <body leftmargin="0" topmargin="0">
     <form id="Form1" method="post" runat="server">
-        <div id="divContainer" runat="server">
-        </div>
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" height="59" style="background-image: url(image/head_bg.gif); background-repeat: repeat;">
+            <tr>
+                <td>
+                    <div id="divContainer" runat="server">
+                    </div>
+                </td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>

@@ -11,7 +11,7 @@
     <meta content="JavaScript" name="vs_defaultClientScript"/>
     <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema"/>
 </head>
-<frameset name="topFrame" rows="80,*" border="0">
+<frameset name="topFrame" rows="59,*" border="0">
 		<frame name="header" src="Header.aspx" scrolling="no" frameborder="0" noresize>
 		<frameset id="middle" name="middle" cols="220,*"">
 			<frame id="menu" name="menu" src="Menu.aspx" scrolling="no" height="76%" style="BORDER-RIGHT:#C9C9C9 1px solid; cursor:w-resize;">
