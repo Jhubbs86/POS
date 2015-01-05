@@ -94,7 +94,7 @@ BEGIN
 				,[IsValid]
 				,[IsLeaf]
 			)
-     SELECT '用户组管理','SystemManage/RoleManage/RoleList.aspx',Menu.PKID,1,1,1
+     SELECT '角色管理','SystemManage/RoleManage/RoleList.aspx',Menu.PKID,1,1,1
      FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
 END
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '用户管理' HAVING(COUNT(*)>0))
@@ -108,7 +108,7 @@ BEGIN
 				,[IsValid]
 				,[IsLeaf]
 			)
-     SELECT '用户信息管理','SystemManage/UserManage/UserList.aspx',Menu.PKID,2,1,1
+     SELECT '用户管理','SystemManage/UserManage/UserList.aspx',Menu.PKID,2,1,1
      FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
 END
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '修改口令' HAVING(COUNT(*)>0))
@@ -122,7 +122,7 @@ BEGIN
 				,[IsValid]
 				,[IsLeaf]
 			)
-     SELECT '修改口令（个人）','SystemManage/UserManage/UserModifyPassword.aspx',Menu.PKID,3,1,1
+     SELECT '修改口令','SystemManage/UserManage/UserModifyPassword.aspx',Menu.PKID,3,1,1
      FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
 END
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '切换用户' HAVING(COUNT(*)>0))
