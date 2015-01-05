@@ -42,8 +42,8 @@
   <ItemGroup>
     <Compile Include="BaseData\District.cs" />
     <Compile Include="Common.cs" />
-    <Compile Include="OperationManage\CWInfo.cs" />
-    <Compile Include="OperationManage\CWPerInfo.cs" />
+    <Compile Include="JHSY\CWInfo.cs" />
+    <Compile Include="JHSY\CWPerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemManage\OperationLog.cs" />
     <Compile Include="SystemManage\Role.cs" />

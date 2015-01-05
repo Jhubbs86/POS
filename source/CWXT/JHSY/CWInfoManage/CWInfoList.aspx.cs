@@ -11,7 +11,7 @@ using System.Web.UI.HtmlControls;
 
 using Wicresoft.BusinessObject;
 
-namespace CWXT.OperationManage.CWInfoManage
+namespace CWXT.JHSY.CWInfoManage
 {
     public partial class CWInfoList : EnterpriseWebsite.WebUI.ScrollPage
     {
@@ -47,7 +47,7 @@ namespace CWXT.OperationManage.CWInfoManage
         private void LoadData(int pageNumber, int pageSize)
         {
             int totalCount = 0;
-            BusinessRule.OperationManage.CWInfo rule = new BusinessRule.OperationManage.CWInfo();
+            BusinessRule.JHSY.CWInfo rule = new BusinessRule.JHSY.CWInfo();
             this.tblSchema = rule.GetCWInfoList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.ASC, this.GetLastQueryCondition(this.dgCWInfo.UniqueID));
             ucCustomPaging.TotalRecords = totalCount;
 

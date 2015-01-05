@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CWInfoQuery.aspx.cs" Inherits="CWXT.OperationManage.CWInfoManage.CWInfoQuery" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CWInfoQuery.aspx.cs" Inherits="CWXT.JHSY.CWInfoManage.CWInfoQuery" %>
 
 <%@ Register TagPrefix="uc1" TagName="QueryProvider" Src="~/CustomControls/QueryProvider.ascx" %>
 <%@ Register TagPrefix="iewc" Namespace="Microsoft.Web.UI.WebControls" Assembly="Microsoft.Web.UI.WebControls" %>

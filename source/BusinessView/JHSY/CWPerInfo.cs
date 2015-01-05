@@ -29,7 +29,7 @@ namespace BusinessView
         public override int LoadData(int pageNumber, int pageSize)
         {
             int totalCount = 0;
-            BusinessRule.OperationManage.CWPerInfo rule = new BusinessRule.OperationManage.CWPerInfo();
+            BusinessRule.JHSY.CWPerInfo rule = new BusinessRule.JHSY.CWPerInfo();
             this.tblSchema = rule.GetCWPerInfoList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.ASC, this.CurrentFilter);
 
             return totalCount;

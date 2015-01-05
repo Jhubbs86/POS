@@ -11,7 +11,7 @@ using System.Web.UI.HtmlControls;
 using System.Drawing;
 using Wicresoft.BusinessObject;
 
-namespace CWXT.OperationManage.CWInfoManage
+namespace CWXT.JHSY.CWInfoManage
 {
     public partial class CWInfo : System.Web.UI.UserControl
     {

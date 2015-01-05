@@ -27,7 +27,7 @@ namespace BusinessView
         public override int LoadData(int pageNumber, int pageSize)
         {
             int totalCount = 0;
-            BusinessRule.OperationManage.CWInfo rule = new BusinessRule.OperationManage.CWInfo();
+            BusinessRule.JHSY.CWInfo rule = new BusinessRule.JHSY.CWInfo();
             this.tblSchema = rule.GetCWInfoList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.ASC, this.CurrentFilter);
 
             return totalCount;

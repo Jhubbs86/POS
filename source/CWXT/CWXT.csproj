@@ -301,12 +301,12 @@
     <Content Include="Menu.aspx" />
     <EmbeddedResource Include="Resources\AlertScript.js" />
     <EmbeddedResource Include="Resources\Calendar30.js" />
-    <Content Include="OperationManage\CWInfoManage\CWInfo.ascx" />
-    <Content Include="OperationManage\CWInfoManage\CWInfoAdd.aspx" />
-    <Content Include="OperationManage\CWInfoManage\CWInfoEdit.aspx" />
-    <Content Include="OperationManage\CWInfoManage\CWInfoList.aspx" />
-    <Content Include="OperationManage\CWInfoManage\CWInfoQuery.aspx" />
-    <Content Include="OperationManage\CWInfoManage\CWInfoView.aspx" />
+    <Content Include="JHSY\CWInfoManage\CWInfo.ascx" />
+    <Content Include="JHSY\CWInfoManage\CWInfoAdd.aspx" />
+    <Content Include="JHSY\CWInfoManage\CWInfoEdit.aspx" />
+    <Content Include="JHSY\CWInfoManage\CWInfoList.aspx" />
+    <Content Include="JHSY\CWInfoManage\CWInfoQuery.aspx" />
+    <Content Include="JHSY\CWInfoManage\CWInfoView.aspx" />
     <Content Include="Resources\Common.js" />
     <EmbeddedResource Include="Resources\CustomerSiteStyle.css" />
     <EmbeddedResource Include="Resources\DataGrid.htc" />
@@ -577,46 +577,46 @@
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="MenuConfig.cs" />
-    <Compile Include="OperationManage\CWInfoManage\CWInfo.ascx.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfo.ascx.cs">
       <DependentUpon>CWInfo.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfo.ascx.designer.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfo.ascx.designer.cs">
       <DependentUpon>CWInfo.ascx</DependentUpon>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoAdd.aspx.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoAdd.aspx.cs">
       <DependentUpon>CWInfoAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoAdd.aspx.designer.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoAdd.aspx.designer.cs">
       <DependentUpon>CWInfoAdd.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoEdit.aspx.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoEdit.aspx.cs">
       <DependentUpon>CWInfoEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoEdit.aspx.designer.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoEdit.aspx.designer.cs">
       <DependentUpon>CWInfoEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoList.aspx.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoList.aspx.cs">
       <DependentUpon>CWInfoList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoList.aspx.designer.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoList.aspx.designer.cs">
       <DependentUpon>CWInfoList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoQuery.aspx.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoQuery.aspx.cs">
       <DependentUpon>CWInfoQuery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoQuery.aspx.designer.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoQuery.aspx.designer.cs">
       <DependentUpon>CWInfoQuery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoView.aspx.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoView.aspx.cs">
       <DependentUpon>CWInfoView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="OperationManage\CWInfoManage\CWInfoView.aspx.designer.cs">
+    <Compile Include="JHSY\CWInfoManage\CWInfoView.aspx.designer.cs">
       <DependentUpon>CWInfoView.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProcessFlow\AccountController.cs" />

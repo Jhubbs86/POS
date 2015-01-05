@@ -27,7 +27,7 @@ namespace CWXT
                 + "LEFT JOIN RoleMenu ON RoleMenu.FK_Role = dbo.[User].FK_Role WHERE dbo.[User].PKID = " + GlobalFacade.SystemContext.GetContext().UserID.ToString() + ")";
 
                 DataRoots = new Wicresoft.Session.Session().SqlHelper.ExcuteDataTable(DataRoots,
-                "SELECT * FROM Menu WHERE IsLeaf=0 AND IsValid = 1 AND ISNULL(URL,'') = '' AND Parent = 0 AND " + strWhere
+                "SELECT * FROM Menu WHERE IsLeaf=0 AND IsValid = 1 AND Parent = 0 AND " + strWhere
                 + " ORDER BY [Parent],[DisplayOrder]", CommandType.Text);
 
                 FillMenus(DataRoots);
@@ -45,6 +45,12 @@ namespace CWXT
             {
                 node = new M2G.Web.UI.TreeViewNode();
                 node.Text = dr["ChineseName"].ToString();
+                if (dr["URL"].ToString() != string.Empty)
+                {
+                    node.Target = "header";
+                    node.NavigateUrl = dr["URL"].ToString() + "?menuid=" + dr["PKID"].ToString();
+                }
+
                 DataTable tempTable = GetMenusForParentID(dr["PKID"].ToString());
                 FillNode(node, tempTable);
                 TreeView1.Nodes.Add(node);
@@ -53,7 +59,7 @@ namespace CWXT
 
         public void FillNode(M2G.Web.UI.TreeViewNode tvn, DataTable dt)
         {
-            if (dt == null || dt.Rows.Count < 0)
+            if (dt == null || dt.Rows.Count <= 0)
                 return;
             else
             {

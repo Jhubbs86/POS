@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace CWXT.OperationManage.CWInfoManage
+namespace CWXT.JHSY.CWInfoManage
 {
     public partial class CWInfoView : EnterpriseWebsite.WebUI.ScrollPage
     {

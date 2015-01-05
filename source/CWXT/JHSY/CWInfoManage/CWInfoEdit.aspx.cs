@@ -9,15 +9,15 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 
-namespace CWXT.OperationManage.CWInfoManage
+namespace CWXT.JHSY.CWInfoManage
 {
-    public partial class CWInfoAdd : EnterpriseWebsite.WebUI.ScrollPage
+    public partial class CWInfoEdit : EnterpriseWebsite.WebUI.ScrollPage
     {
         private void Page_Load(object sender, System.EventArgs e)
         {
             if (!this.IsPostBack)
             {
-                ucCWInfo.LoadData(Enums.PageStatus.Create);
+                ucCWInfo.LoadData(this.PKID, Enums.PageStatus.Edit);
             }
         }
 
@@ -25,7 +25,7 @@ namespace CWXT.OperationManage.CWInfoManage
         {
             if (this.ucCWInfo.ValidatePage())
             {
-                ucCWInfo.Save();
+                ucCWInfo.Update();
                 base.GoBack("CWInfoList.aspx");
             }
             return false;
@@ -41,10 +41,10 @@ namespace CWXT.OperationManage.CWInfoManage
         {
             InitializeComponent();
             base.OnInit(e);
-            this.AppenServerEvents();
+            this.AppendServerEvents();
         }
 
-        private void AppenServerEvents()
+        private void AppendServerEvents()
         {
             this.btnSave.ButtonClick += new Microsoft.Web.UI.WebControls.ToolbarItemEventHandler(btnSave_ButtonClick);
             this.btnReturn.ButtonClick += new Microsoft.Web.UI.WebControls.ToolbarItemEventHandler(btnReturn_ButtonClick);

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CWInfo.ascx.cs" Inherits="CWXT.OperationManage.CWInfoManage.CWInfo" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CWInfo.ascx.cs" Inherits="CWXT.JHSY.CWInfoManage.CWInfo" %>
 <!--页面验证开始-->
 <asp:ValidationSummary ID="ValidationSummaryList" CssClass="txt9" ShowSummary="True" HeaderText="您需要修改以下几点，才能成功保存" EnableClientScript="True" DisplayMode="BulletList" runat="server"></asp:ValidationSummary>
 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" EnableClientScript="True" ControlToValidate="txtVillageName" ErrorMessage="村名称不能为空" Display="None"></asp:RequiredFieldValidator>

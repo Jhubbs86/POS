@@ -12,7 +12,7 @@ using System.Web.UI.HtmlControls;
 using Wicresoft.BusinessObject;
 using Wicresoft.Session;
 
-namespace CWXT.OperationManage.CWInfoManage
+namespace CWXT.JHSY.CWInfoManage
 {
     public partial class CWInfoQuery : EnterpriseWebsite.WebUI.ScrollPage
     {

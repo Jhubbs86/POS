@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CWInfoList.aspx.cs" Inherits="CWXT.OperationManage.CWInfoManage.CWInfoList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CWInfoList.aspx.cs" Inherits="CWXT.JHSY.CWInfoManage.CWInfoList" %>
 
 <%@ Register TagPrefix="vs" Namespace="Vladsm.Web.UI.WebControls" Assembly="GroupRadioButton" %>
 <%@ Register TagPrefix="uccs" TagName="OutExcel" Src="~/CustomControls/DataExport.ascx" %>
