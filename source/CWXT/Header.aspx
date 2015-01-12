@@ -6,7 +6,7 @@
     <title>Header</title>
     <script language="javascript">
         function MenuItemClick(obj, url) {
-            obj.target = "main";
+            obj.target = "menu";
             obj.href = url;
             obj.click();
         }

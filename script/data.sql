@@ -52,7 +52,7 @@ BEGIN
      VALUES
            (
 				'系统管理'
-				,'Header.aspx'
+				,''
 				,0
 				,1
 				,1
@@ -74,7 +74,7 @@ BEGIN
      VALUES
            (
 				'计划生育'
-				,'Header.aspx'
+				,''
 				,0
 				,2
 				,1

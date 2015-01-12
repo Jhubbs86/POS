@@ -23,11 +23,16 @@ namespace CWXT
         {
             if (!this.IsPostBack)
             {
+                string parent;
+                if (Request.QueryString["Parent"] != null)
+                    parent = Request.QueryString["Parent"];
+                else
+                    parent = "0";
                 strWhere = " PKID IN (SELECT  RoleMenu.FK_Menu FROM dbo.[User] "
                 + "LEFT JOIN RoleMenu ON RoleMenu.FK_Role = dbo.[User].FK_Role WHERE dbo.[User].PKID = " + GlobalFacade.SystemContext.GetContext().UserID.ToString() + ")";
 
                 DataRoots = new Wicresoft.Session.Session().SqlHelper.ExcuteDataTable(DataRoots,
-                "SELECT * FROM Menu WHERE IsLeaf=0 AND IsValid = 1 AND Parent = 0 AND " + strWhere
+                "SELECT * FROM Menu WHERE IsValid = 1 AND Parent = "+ parent + " AND " + strWhere
                 + " ORDER BY [Parent],[DisplayOrder]", CommandType.Text);
 
                 FillMenus(DataRoots);
@@ -45,10 +50,10 @@ namespace CWXT
             {
                 node = new M2G.Web.UI.TreeViewNode();
                 node.Text = dr["ChineseName"].ToString();
-                if (dr["URL"].ToString() != string.Empty)
+                if (dr["URL"].ToString() != string.Empty && Convert.ToBoolean(dr["IsLeaf"].ToString()))
                 {
-                    node.Target = "header";
-                    node.NavigateUrl = dr["URL"].ToString() + "?menuid=" + dr["PKID"].ToString();
+                    node.Target = "main";
+                    node.NavigateUrl = dr["URL"].ToString() ;
                 }
 
                 DataTable tempTable = GetMenusForParentID(dr["PKID"].ToString());
@@ -68,10 +73,10 @@ namespace CWXT
                 {
                     node = new M2G.Web.UI.TreeViewNode();
                     node.Text = dr["ChineseName"].ToString();
-                    if (dr["URL"].ToString() != string.Empty)
+                    if (dr["URL"].ToString() != string.Empty && Convert.ToBoolean(dr["IsLeaf"].ToString()))
                     {
-                        node.Target = "header";
-                        node.NavigateUrl = dr["URL"].ToString() + "?menuid=" + dr["PKID"].ToString();
+                        node.Target = "main";
+                        node.NavigateUrl = dr["URL"].ToString();
                     }
                     DataTable subTempTable = GetMenusForParentID(dr["PKID"].ToString());
                     FillNode(node, subTempTable);
@@ -83,7 +88,7 @@ namespace CWXT
         public DataTable GetMenusForParentID(string parent)
         {
             return new Wicresoft.Session.Session().SqlHelper.ExcuteDataTable(null,
-                "SELECT * FROM Menu WHERE IsLeaf=0 AND IsValid = 1 AND [Parent]=" + parent +
+                "SELECT * FROM Menu WHERE IsValid = 1 AND [Parent]=" + parent +
                 " AND " + strWhere + " ORDER BY [Parent],[DisplayOrder]", CommandType.Text);
         }
         #endregion
