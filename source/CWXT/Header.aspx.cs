@@ -27,13 +27,16 @@ namespace CWXT
             {
                 string url ="Menu.aspx?Parent=" + dr["PKID"].ToString();
                 HtmlAnchor a = new HtmlAnchor();
-                a.InnerHtml = "[" + dr["Chinesename"].ToString() +"]";
+                a.InnerHtml = dr["Chinesename"].ToString() ;
                 a.HRef = "javascript:void(0)";
+                a.Style.Add("text-decoration", "none");
+                a.Style.Add("padding-left", "10px");
+                a.Style.Add("padding-right", "10px");
                 a.Attributes.Add("onclick", string.Format("MenuItemClick(this,\"{0}\")", url));
+                
                 this.divContainer.Controls.Add(a);
             }
         }
-        private int parentMenuId = 0;
 
         private string strSqlWhere;
         private DataTable dtMenuItems;
