@@ -24,10 +24,18 @@ namespace CWXT
             if (!this.IsPostBack)
             {
                 string parent;
+                string title;
                 if (Request.QueryString["Parent"] != null)
                     parent = Request.QueryString["Parent"];
                 else
                     parent = "0";
+
+                if (Request.QueryString["Title"] != null)
+                    title = Request.QueryString["Title"];
+                else
+                    title = "系统菜单";
+                this.lb_MenuTitle.Text = title;
+
                 strWhere = " PKID IN (SELECT  RoleMenu.FK_Menu FROM dbo.[User] "
                 + "LEFT JOIN RoleMenu ON RoleMenu.FK_Role = dbo.[User].FK_Role WHERE dbo.[User].PKID = " + GlobalFacade.SystemContext.GetContext().UserID.ToString() + ")";
 

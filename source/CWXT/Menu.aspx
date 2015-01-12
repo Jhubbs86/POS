@@ -33,7 +33,7 @@
     <form id="Form1" method="post" runat="server">
         <table width="100%" border="0" cellpadding="3" cellspacing="0">
             <tr>
-                <td class="MenuHeader" id="MenuHeader">系统菜单<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <td class="MenuHeader" id="MenuHeader"><asp:Label id="lb_MenuTitle" Text="系统菜单" runat="server"></asp:Label><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<img id="topBannerDicrection" onclick="TopBannerSwitcher()" align="absmiddle" src="image/toUp.gif"
                                 style="cursor: hand" title="隐藏Top Banner" showtitle="隐藏Top Banner" hidetitle="显示Top Banner"></span></td>
             </tr>

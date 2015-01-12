@@ -25,7 +25,7 @@ namespace CWXT
             
             foreach (DataRow dr in dtMenuItems.Rows)
             {
-                string url ="Menu.aspx?Parent=" + dr["PKID"].ToString();
+                string url = "Menu.aspx?Parent=" + dr["PKID"].ToString() + "&Title=" + dr["Chinesename"].ToString();
                 HtmlAnchor a = new HtmlAnchor();
                 a.InnerHtml = dr["Chinesename"].ToString() ;
                 a.HRef = "javascript:void(0)";
