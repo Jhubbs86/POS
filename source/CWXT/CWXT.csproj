@@ -78,6 +78,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Creating.aspx" />
     <Content Include="CustomControls\CustomPaging.ascx" />
     <Content Include="CustomControls\DataExport.ascx" />
     <Content Include="CustomControls\GridPicker.ascx" />
@@ -188,6 +189,8 @@
     <Content Include="image\info.gif" />
     <Content Include="image\jmpz.gif" />
     <Content Include="image\jspz.gif" />
+    <Content Include="image\JSZ.png" />
+    <Content Include="image\JSZ_1.jpg" />
     <Content Include="image\jt.gif" />
     <Content Include="image\knowledge.gif" />
     <Content Include="image\last.png" />
@@ -439,6 +442,13 @@
     <Content Include="WorkSpace\MyWorkSpace.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creating.aspx.cs">
+      <DependentUpon>Creating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creating.aspx.designer.cs">
+      <DependentUpon>Creating.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CustomPaging.ascx.cs">
       <DependentUpon>CustomPaging.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
