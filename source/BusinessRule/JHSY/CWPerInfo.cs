@@ -25,7 +25,7 @@ namespace BusinessRule.JHSY
             BusinessObjectCollection boc = new BusinessObjectCollection("CWPerInfo");
             boc.SessionInstance = session;
             BusinessFilter filter = new BusinessFilter("CWPerInfo");
-            //filter.AddFilterItem("IsValid", "1", Operation.Equal, FilterType.NumberType, AndOr.AND);
+            filter.AddFilterItem("IsValid", "1", Operation.Equal, FilterType.NumberType, AndOr.AND);
             if (subfilter != null)
                 filter.AddFilter(subfilter, AndOr.AND);
             boc.AddFilter(filter);
@@ -48,7 +48,7 @@ namespace BusinessRule.JHSY
             BusinessObjectCollection boc = new BusinessObjectCollection("CWPerInfo");
             boc.SessionInstance = session;
             BusinessFilter filter = new BusinessFilter("CWPerInfo");
-            //filter.AddFilterItem("IsValid", "1", Operation.Equal, FilterType.NumberType, AndOr.AND);
+            filter.AddFilterItem("IsValid", "1", Operation.Equal, FilterType.NumberType, AndOr.AND);
             if (subfilter != null)
                 filter.AddFilter(subfilter, AndOr.AND);
             boc.AddFilter(filter);

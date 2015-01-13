@@ -51,7 +51,12 @@
     <Compile Include="BaseData\District.cs" />
     <Compile Include="BaseData\Region.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="JHSY\CWBirthInfo.cs" />
+    <Compile Include="JHSY\CWFamilySpecHelp.cs" />
     <Compile Include="JHSY\CWInfo.cs" />
+    <Compile Include="JHSY\CWNewMarrige.cs" />
+    <Compile Include="JHSY\CWOneChild.cs" />
+    <Compile Include="JHSY\CWOneChildAward.cs" />
     <Compile Include="JHSY\CWPerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemManage\DataPermission.cs" />

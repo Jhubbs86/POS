@@ -1,13 +1,12 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CWInfoList.aspx.cs" Inherits="CWXT.JHSY.CWInfoManage.CWInfoList" %>
 
 <%@ Register TagPrefix="vs" Namespace="Vladsm.Web.UI.WebControls" Assembly="GroupRadioButton" %>
-<%@ Register TagPrefix="uccs" TagName="OutExcel" Src="~/CustomControls/DataExport.ascx" %>
 <%@ Register TagPrefix="uccs" TagName="CustomPaging" Src="~/CustomControls/CustomPaging.ascx" %>
 <%@ Register TagPrefix="iewc" Namespace="Microsoft.Web.UI.WebControls" Assembly="Microsoft.Web.UI.WebControls" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
 <html>
 <head>
-    <title>村务信息管理</title>
+    <title>村务信息</title>
     <meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR" />
     <meta content="C#" name="CODE_LANGUAGE" />
     <meta content="JavaScript" name="vs_defaultClientScript" />
@@ -18,7 +17,7 @@
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
             <tr>
                 <td>
-                    <span class="txtPageTitle">村务信息管理</span>
+                    <span class="txtPageTitle">村务信息</span>
                 </td>
                 <td>
                     <iewc:Toolbar ID="Toolbar" runat="server" CssClass="MSToolBar">
@@ -71,7 +70,7 @@
                                         <asp:BoundColumn DataField="ModifyTime" HeaderText="最后修改时间"></asp:BoundColumn>
                                     </Columns>
                                 </asp:DataGrid>
-                                <uccs:CustomPaging id="ucCustomPaging" runat="server"></uccs:CustomPaging>
+                                <uccs:CustomPaging ID="ucCustomPaging" runat="server"></uccs:CustomPaging>
                                 <asp:LinkButton ID="btnRefreshData" runat="server"></asp:LinkButton>
                             </td>
                         </tr>

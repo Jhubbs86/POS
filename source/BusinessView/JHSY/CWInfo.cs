@@ -12,7 +12,10 @@ namespace BusinessView
             : base("CWInfo", "村务信息")
         {
             ViewItemCollection vic = new ViewItemCollection();
-            //vic.Add(new ViewItem("District", "所属行政区", true, "DistrictDefaultView"));
+            //vic.Add(new ViewItem("Location", "地理位置", true));
+            //vic.Add(new ViewItem("District", "所属行政区", true,""));
+            //vic.Add(new ViewItem("TotalPeps", "总人数", true));
+            //vic.Add(new ViewItem("IndusValue", "工业总产值", true));
             vic.Add(new ViewItem("VillageChief", "村长", true));
 
             this.PKField = new ViewItem("PKID", "PKID");

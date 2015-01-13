@@ -87,10 +87,10 @@ namespace CWXT.JHSY.CWInfoManage
 
                 if (bo.HaveRecord)
                 {
-                    //bo.ModifyUser.Value = GlobalFacade.SystemContext.GetContext().UserID;
-                    //bo.ModifyTime.Value = DateTime.Now;
-                    //bo.IsValid.Value = false;
-                    //bo.Update();
+                    bo.ModifyUser.Value = GlobalFacade.SystemContext.GetContext().UserID;
+                    bo.ModifyTime.Value = DateTime.Now;
+                    bo.IsValid.Value = false;
+                    bo.Update();
 
                     // Reload Data
                     ucCustomPaging.LoadData(ucCustomPaging.CurrentPage);

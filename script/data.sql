@@ -1,9 +1,9 @@
-delete [CWXT].[dbo].[Role]
-delete [CWXT].[dbo].[Dictionary]
-delete [CWXT].[dbo].[Menu]
-delete [CWXT].[dbo].[RoleMenu]
-delete [CWXT].[dbo].[User]
-delete [CWXT].[dbo].[UserDataPermission]
+TRUNCATE TABLE [CWXT].[dbo].[Role]
+TRUNCATE TABLE [CWXT].[dbo].[Dictionary]
+TRUNCATE TABLE [CWXT].[dbo].[Menu]
+TRUNCATE TABLE [CWXT].[dbo].[RoleMenu]
+TRUNCATE TABLE [CWXT].[dbo].[User]
+TRUNCATE TABLE [CWXT].[dbo].[UserDataPermission]
 /*
 SELECT * FROM [Role]
 */
@@ -170,6 +170,96 @@ BEGIN
 				,[IsLeaf]
 			)
      SELECT '村务信息','JHSY/CWInfoManage/CWInfoList.aspx',Menu.PKID,1,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '计划生育'
+END
+
+IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '人员信息' HAVING(COUNT(*)>0))
+BEGIN
+     INSERT INTO [CWXT].[dbo].[Menu]
+           (
+				[ChineseName]
+				,[URL]
+				,[Parent]
+				,[DisplayOrder]
+				,[IsValid]
+				,[IsLeaf]
+			)
+     SELECT '人员信息','JHSY/CWPerInfo/CWPerInfoList.aspx',Menu.PKID,1,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '计划生育'
+END
+
+IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '新婚登记' HAVING(COUNT(*)>0))
+BEGIN
+     INSERT INTO [CWXT].[dbo].[Menu]
+           (
+				[ChineseName]
+				,[URL]
+				,[Parent]
+				,[DisplayOrder]
+				,[IsValid]
+				,[IsLeaf]
+			)
+     SELECT '新婚登记','JHSY/CWNewMarrige/CWNewMarrigeList.aspx',Menu.PKID,1,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '计划生育'
+END
+
+IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '出生小孩信息' HAVING(COUNT(*)>0))
+BEGIN
+     INSERT INTO [CWXT].[dbo].[Menu]
+           (
+				[ChineseName]
+				,[URL]
+				,[Parent]
+				,[DisplayOrder]
+				,[IsValid]
+				,[IsLeaf]
+			)
+     SELECT '出生小孩信息','JHSY/CWBirthInfo/CWBirthInfoList.aspx',Menu.PKID,1,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '计划生育'
+END
+
+IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '独生子女统计' HAVING(COUNT(*)>0))
+BEGIN
+     INSERT INTO [CWXT].[dbo].[Menu]
+           (
+				[ChineseName]
+				,[URL]
+				,[Parent]
+				,[DisplayOrder]
+				,[IsValid]
+				,[IsLeaf]
+			)
+     SELECT '独生子女统计','JHSY/CWOneChild/CWOneChildList.aspx',Menu.PKID,1,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '计划生育'
+END
+
+IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '独生子女奖励费统计' HAVING(COUNT(*)>0))
+BEGIN
+     INSERT INTO [CWXT].[dbo].[Menu]
+           (
+				[ChineseName]
+				,[URL]
+				,[Parent]
+				,[DisplayOrder]
+				,[IsValid]
+				,[IsLeaf]
+			)
+     SELECT '独生子女奖励费统计','JHSY/CWOneChildAward/CWOneChildAwardList.aspx',Menu.PKID,1,1,1
+     FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '计划生育'
+END
+
+IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '计生家庭特别扶助统计' HAVING(COUNT(*)>0))
+BEGIN
+     INSERT INTO [CWXT].[dbo].[Menu]
+           (
+				[ChineseName]
+				,[URL]
+				,[Parent]
+				,[DisplayOrder]
+				,[IsValid]
+				,[IsLeaf]
+			)
+     SELECT '计生家庭特别扶助统计','JHSY/CWFamilySpecHelp/CWFamilySpecHelpList.aspx',Menu.PKID,1,1,1
      FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '计划生育'
 END
 

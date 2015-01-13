@@ -42,7 +42,12 @@
   <ItemGroup>
     <Compile Include="BaseData\Region\Dictionary_RegionDetail.cs" />
     <Compile Include="BaseData\Region\District.cs" />
+    <Compile Include="JHSY\CWBirthInfo.cs" />
+    <Compile Include="JHSY\CWFamilySpecHelp.cs" />
     <Compile Include="JHSY\CWInfo.cs" />
+    <Compile Include="JHSY\CWNewMarrige.cs" />
+    <Compile Include="JHSY\CWOneChild.cs" />
+    <Compile Include="JHSY\CWOneChildAward.cs" />
     <Compile Include="JHSY\CWPerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemManage\Dictionary.cs" />

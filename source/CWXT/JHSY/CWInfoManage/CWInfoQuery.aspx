@@ -13,7 +13,7 @@
     <base target="_self" />
 </head>
 <body class="common">
-    <form id="Form" method="post" runat="server">
+    <form id="Form1" method="post" runat="server">
         <table cellspacing="0" cellpadding="0" width="100%" border="0">
             <!--工具条-->
             <tr>

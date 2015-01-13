@@ -299,6 +299,42 @@
     <Content Include="image\zszdcxgzpz.gif" />
     <Content Include="image\zzbmpz.gif" />
     <Content Include="image\zzqxgl.gif" />
+    <Content Include="JHSY\CWBirthInfo\CWBirthInfo.ascx" />
+    <Content Include="JHSY\CWBirthInfo\CWBirthInfoAdd.aspx" />
+    <Content Include="JHSY\CWBirthInfo\CWBirthInfoEdit.aspx" />
+    <Content Include="JHSY\CWBirthInfo\CWBirthInfoList.aspx" />
+    <Content Include="JHSY\CWBirthInfo\CWBirthInfoQuery.aspx" />
+    <Content Include="JHSY\CWBirthInfo\CWBirthInfoView.aspx" />
+    <Content Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelp.ascx" />
+    <Content Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpAdd.aspx" />
+    <Content Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpEdit.aspx" />
+    <Content Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpList.aspx" />
+    <Content Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpQuery.aspx" />
+    <Content Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpView.aspx" />
+    <Content Include="JHSY\CWNewMarrige\CWNewMarrige.ascx" />
+    <Content Include="JHSY\CWNewMarrige\CWNewMarrigeAdd.aspx" />
+    <Content Include="JHSY\CWNewMarrige\CWNewMarrigeEdit.aspx" />
+    <Content Include="JHSY\CWNewMarrige\CWNewMarrigeList.aspx" />
+    <Content Include="JHSY\CWNewMarrige\CWNewMarrigeQuery.aspx" />
+    <Content Include="JHSY\CWNewMarrige\CWNewMarrigeView.aspx" />
+    <Content Include="JHSY\CWOneChildAward\CWOneChildAward.ascx" />
+    <Content Include="JHSY\CWOneChildAward\CWOneChildAwardAdd.aspx" />
+    <Content Include="JHSY\CWOneChildAward\CWOneChildAwardEdit.aspx" />
+    <Content Include="JHSY\CWOneChildAward\CWOneChildAwardList.aspx" />
+    <Content Include="JHSY\CWOneChildAward\CWOneChildAwardQuery.aspx" />
+    <Content Include="JHSY\CWOneChildAward\CWOneChildAwardView.aspx" />
+    <Content Include="JHSY\CWOneChild\CWOneChild.ascx" />
+    <Content Include="JHSY\CWOneChild\CWOneChildAdd.aspx" />
+    <Content Include="JHSY\CWOneChild\CWOneChildEdit.aspx" />
+    <Content Include="JHSY\CWOneChild\CWOneChildList.aspx" />
+    <Content Include="JHSY\CWOneChild\CWOneChildQuery.aspx" />
+    <Content Include="JHSY\CWOneChild\CWOneChildView.aspx" />
+    <Content Include="JHSY\CWPerInfo\CWPerInfo.ascx" />
+    <Content Include="JHSY\CWPerInfo\CWPerInfoAdd.aspx" />
+    <Content Include="JHSY\CWPerInfo\CWPerInfoEdit.aspx" />
+    <Content Include="JHSY\CWPerInfo\CWPerInfoList.aspx" />
+    <Content Include="JHSY\CWPerInfo\CWPerInfoQuery.aspx" />
+    <Content Include="JHSY\CWPerInfo\CWPerInfoView.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Menu.aspx" />
@@ -315,18 +351,18 @@
     <EmbeddedResource Include="Resources\DataGrid.htc" />
     <EmbeddedResource Include="Resources\css\demos.css" />
     <EmbeddedResource Include="Resources\css\treeStyle.css" />
-    <Content Include="Resources\DatePicker\calendar.js" />
-    <Content Include="Resources\DatePicker\lang\en.js" />
-    <Content Include="Resources\DatePicker\lang\zh-cn.js" />
-    <Content Include="Resources\DatePicker\lang\zh-tw.js" />
-    <Content Include="Resources\DatePicker\skin\datePicker.gif" />
-    <Content Include="Resources\DatePicker\skin\default\datepicker.css" />
-    <Content Include="Resources\DatePicker\skin\default\img.gif" />
-    <Content Include="Resources\DatePicker\skin\WdatePicker.css" />
-    <Content Include="Resources\DatePicker\skin\whyGreen\bg.jpg" />
-    <Content Include="Resources\DatePicker\skin\whyGreen\datepicker.css" />
-    <Content Include="Resources\DatePicker\skin\whyGreen\img.gif" />
-    <Content Include="Resources\DatePicker\WdatePicker.js" />
+    <EmbeddedResource Include="Resources\DatePicker\calendar.js" />
+    <EmbeddedResource Include="Resources\DatePicker\lang\en.js" />
+    <EmbeddedResource Include="Resources\DatePicker\lang\zh-cn.js" />
+    <EmbeddedResource Include="Resources\DatePicker\lang\zh-tw.js" />
+    <EmbeddedResource Include="Resources\DatePicker\skin\datePicker.gif" />
+    <EmbeddedResource Include="Resources\DatePicker\skin\default\datepicker.css" />
+    <EmbeddedResource Include="Resources\DatePicker\skin\default\img.gif" />
+    <EmbeddedResource Include="Resources\DatePicker\skin\WdatePicker.css" />
+    <EmbeddedResource Include="Resources\DatePicker\skin\whyGreen\bg.jpg" />
+    <EmbeddedResource Include="Resources\DatePicker\skin\whyGreen\datepicker.css" />
+    <EmbeddedResource Include="Resources\DatePicker\skin\whyGreen\img.gif" />
+    <EmbeddedResource Include="Resources\DatePicker\WdatePicker.js" />
     <EmbeddedResource Include="Resources\dragdrop.htc" />
     <EmbeddedResource Include="Resources\ImageButton.htc" />
     <Content Include="Resources\images\cut.png" />
@@ -566,6 +602,222 @@
     </Compile>
     <Compile Include="Header.aspx.designer.cs">
       <DependentUpon>Header.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfo.ascx.cs">
+      <DependentUpon>CWBirthInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfo.ascx.designer.cs">
+      <DependentUpon>CWBirthInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoAdd.aspx.cs">
+      <DependentUpon>CWBirthInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoAdd.aspx.designer.cs">
+      <DependentUpon>CWBirthInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoEdit.aspx.cs">
+      <DependentUpon>CWBirthInfoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoEdit.aspx.designer.cs">
+      <DependentUpon>CWBirthInfoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoList.aspx.cs">
+      <DependentUpon>CWBirthInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoList.aspx.designer.cs">
+      <DependentUpon>CWBirthInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoQuery.aspx.cs">
+      <DependentUpon>CWBirthInfoQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoQuery.aspx.designer.cs">
+      <DependentUpon>CWBirthInfoQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoView.aspx.cs">
+      <DependentUpon>CWBirthInfoView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWBirthInfo\CWBirthInfoView.aspx.designer.cs">
+      <DependentUpon>CWBirthInfoView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelp.ascx.cs">
+      <DependentUpon>CWFamilySpecHelp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelp.ascx.designer.cs">
+      <DependentUpon>CWFamilySpecHelp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpAdd.aspx.cs">
+      <DependentUpon>CWFamilySpecHelpAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpAdd.aspx.designer.cs">
+      <DependentUpon>CWFamilySpecHelpAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpEdit.aspx.cs">
+      <DependentUpon>CWFamilySpecHelpEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpEdit.aspx.designer.cs">
+      <DependentUpon>CWFamilySpecHelpEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpList.aspx.cs">
+      <DependentUpon>CWFamilySpecHelpList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpList.aspx.designer.cs">
+      <DependentUpon>CWFamilySpecHelpList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpQuery.aspx.cs">
+      <DependentUpon>CWFamilySpecHelpQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpQuery.aspx.designer.cs">
+      <DependentUpon>CWFamilySpecHelpQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpView.aspx.cs">
+      <DependentUpon>CWFamilySpecHelpView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWFamilySpecHelp\CWFamilySpecHelpView.aspx.designer.cs">
+      <DependentUpon>CWFamilySpecHelpView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrige.ascx.cs">
+      <DependentUpon>CWNewMarrige.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrige.ascx.designer.cs">
+      <DependentUpon>CWNewMarrige.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeAdd.aspx.cs">
+      <DependentUpon>CWNewMarrigeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeAdd.aspx.designer.cs">
+      <DependentUpon>CWNewMarrigeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeEdit.aspx.cs">
+      <DependentUpon>CWNewMarrigeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeEdit.aspx.designer.cs">
+      <DependentUpon>CWNewMarrigeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeList.aspx.cs">
+      <DependentUpon>CWNewMarrigeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeList.aspx.designer.cs">
+      <DependentUpon>CWNewMarrigeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeQuery.aspx.cs">
+      <DependentUpon>CWNewMarrigeQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeQuery.aspx.designer.cs">
+      <DependentUpon>CWNewMarrigeQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeView.aspx.cs">
+      <DependentUpon>CWNewMarrigeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWNewMarrige\CWNewMarrigeView.aspx.designer.cs">
+      <DependentUpon>CWNewMarrigeView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAward.ascx.cs">
+      <DependentUpon>CWOneChildAward.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAward.ascx.designer.cs">
+      <DependentUpon>CWOneChildAward.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardAdd.aspx.cs">
+      <DependentUpon>CWOneChildAwardAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardAdd.aspx.designer.cs">
+      <DependentUpon>CWOneChildAwardAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardEdit.aspx.cs">
+      <DependentUpon>CWOneChildAwardEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardEdit.aspx.designer.cs">
+      <DependentUpon>CWOneChildAwardEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardList.aspx.cs">
+      <DependentUpon>CWOneChildAwardList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardList.aspx.designer.cs">
+      <DependentUpon>CWOneChildAwardList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardQuery.aspx.cs">
+      <DependentUpon>CWOneChildAwardQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardQuery.aspx.designer.cs">
+      <DependentUpon>CWOneChildAwardQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardView.aspx.cs">
+      <DependentUpon>CWOneChildAwardView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChildAward\CWOneChildAwardView.aspx.designer.cs">
+      <DependentUpon>CWOneChildAwardView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChild.ascx.cs">
+      <DependentUpon>CWOneChild.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChild.ascx.designer.cs">
+      <DependentUpon>CWOneChild.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildAdd.aspx.cs">
+      <DependentUpon>CWOneChildAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildAdd.aspx.designer.cs">
+      <DependentUpon>CWOneChildAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildEdit.aspx.cs">
+      <DependentUpon>CWOneChildEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildEdit.aspx.designer.cs">
+      <DependentUpon>CWOneChildEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildList.aspx.cs">
+      <DependentUpon>CWOneChildList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildList.aspx.designer.cs">
+      <DependentUpon>CWOneChildList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildQuery.aspx.cs">
+      <DependentUpon>CWOneChildQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildQuery.aspx.designer.cs">
+      <DependentUpon>CWOneChildQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildView.aspx.cs">
+      <DependentUpon>CWOneChildView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWOneChild\CWOneChildView.aspx.designer.cs">
+      <DependentUpon>CWOneChildView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfo.ascx.cs">
+      <DependentUpon>CWPerInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfo.ascx.designer.cs">
+      <DependentUpon>CWPerInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoAdd.aspx.cs">
+      <DependentUpon>CWPerInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoAdd.aspx.designer.cs">
+      <DependentUpon>CWPerInfoAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoEdit.aspx.cs">
+      <DependentUpon>CWPerInfoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoEdit.aspx.designer.cs">
+      <DependentUpon>CWPerInfoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoList.aspx.cs">
+      <DependentUpon>CWPerInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoList.aspx.designer.cs">
+      <DependentUpon>CWPerInfoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoQuery.aspx.cs">
+      <DependentUpon>CWPerInfoQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoQuery.aspx.designer.cs">
+      <DependentUpon>CWPerInfoQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoView.aspx.cs">
+      <DependentUpon>CWPerInfoView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JHSY\CWPerInfo\CWPerInfoView.aspx.designer.cs">
+      <DependentUpon>CWPerInfoView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

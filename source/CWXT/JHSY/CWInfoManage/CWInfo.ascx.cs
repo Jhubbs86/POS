@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
+
 using Wicresoft.BusinessObject;
 
 namespace CWXT.JHSY.CWInfoManage
@@ -124,7 +125,7 @@ namespace CWXT.JHSY.CWInfoManage
             if (!string.IsNullOrEmpty(this.txtVillageName.Text.Trim()))
             {
                 BusinessRule.Common rule = new BusinessRule.Common();
-                args.IsValid = rule.IsFieldExclusiveM("VillageName", this.txtVillageName.Text.Trim(), "CWInfo", true, this.PKID);
+                args.IsValid = rule.IsFieldExclusive("VillageName", this.txtVillageName.Text.Trim(), "CWInfo", true, this.PKID);
             }
         }
 
@@ -176,9 +177,7 @@ namespace CWXT.JHSY.CWInfoManage
             bo.Memo.Value = this.txtMemo.Text.Trim();
 
             bo.CreateTime.Value = DateTime.Now;
-            bo.ModifyTime.Value = DateTime.Now;
-            bo.CreateUser.Value = GlobalFacade.SystemContext.GetContext().UserID;
-            bo.ModifyUser.Value = GlobalFacade.SystemContext.GetContext().UserID;
+            bo.CreateUser.Value = userID;
 
             bo.Insert();
         }
@@ -213,11 +212,10 @@ namespace CWXT.JHSY.CWInfoManage
 
                 bo.VillageChief.Value = this.txtVillageChief.Text.Trim();
 
-                bo.ModifyTime.Value = DateTime.Now;
                 bo.Memo.Value = this.txtMemo.Text.Trim();
 
                 bo.ModifyTime.Value = DateTime.Now;
-                bo.ModifyUser.Value = GlobalFacade.SystemContext.GetContext().UserID;
+                bo.ModifyUser.Value = userID;
 
                 bo.Update();
             }
@@ -258,7 +256,7 @@ namespace CWXT.JHSY.CWInfoManage
 
             BusinessFilter filter = new BusinessFilter("Dictionary");
             filter.AddFilterItem("IsValid", "1", Operation.Equal, FilterType.NumberType, AndOr.AND);
-            filter.AddFilterItem("Type", "1", Operation.Equal, FilterType.NumberType, AndOr.AND);
+            filter.AddFilterItem("Type", GlobalFacade.DictionaryType.Type_1.ToString(), Operation.Equal, FilterType.NumberType, AndOr.AND);
 
             boc.AddFilter(filter);
 

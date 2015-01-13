@@ -23,87 +23,6 @@ namespace GlobalFacade
 	public class UserLevel
 	{
 		public static string GlobalLevel = "Global";
-		public static string CityLevel = "City";
-		public static string CenterLevel = "Center";
-	}
-
-	/// <summary>
-	/// 用户岗位硬编码
-	/// </summary>
-	public class UserType
-	{
-		/// <summary>
-		/// TMK
-		/// </summary>
-		public static int Type_1 = 1;
-		/// <summary>
-		/// 市场
-		/// </summary>
-		public static int Type_2 = 2;
-		/// <summary>
-		/// 前台
-		/// </summary>
-		public static int Type_3 = 3;
-		/// <summary>
-		/// 课程顾问
-		/// </summary>
-		public static int Type_4 = 4;
-		/// <summary>
-		/// 财务
-		/// </summary>
-		public static int Type_5 = 5;
-		/// <summary>
-		/// Tutor
-		/// </summary>
-		public static int Type_6 = 6;
-		/// <summary>
-		/// 外教
-		/// </summary>
-		public static int Type_7 = 7;
-		/// <summary>
-		/// 助教
-		/// </summary>
-		public static int Type_8 = 8;
-		/// <summary>
-		/// 中心主任
-		/// </summary>
-		public static int Type_9 = 9;
-		/// <summary>
-		/// 管理层
-		/// </summary>
-		public static int Type_10 = 10;
-		/// <summary>
-		/// 其他
-		/// </summary>
-		public static int Type_11 = 11;
-		/// <summary>
-		/// 教学主管
-		/// </summary>
-		public static int Type_12 = 12;
-		/// <summary>
-		/// TMK主管
-		/// </summary>
-		public static int Type_13 = 13;
-		/// <summary>
-		/// 总部TMK
-		/// </summary>
-		public static int Type_14 = 14;
-		/// <summary>
-		/// 特殊合同处理
-		/// </summary>
-		public static int Type_15 = 15;
-		/// <summary>
-		/// 客服督导
-		/// </summary>
-		public static int Type_16 = 16;
-		/// <summary>
-		/// 查看课表
-		/// </summary>
-		public static int Type_17 = 17;
-        /// <summary>
-        /// 城市校长
-        /// </summary>
-        public static int Type_18 = 18;
 	}
 
     /// <summary>
@@ -115,66 +34,45 @@ namespace GlobalFacade
         /// 总部系统管理员
         /// </summary>
         public static int Role_1 = 1;
+    }
+
+    /// <summary>
+    /// 字典表类型
+    /// </summary>
+    public class DictionaryType
+    {
         /// <summary>
-        /// 总部管理层用户
+        /// 所属行政区
         /// </summary>
-        public static int Role_2 = 2;
+        public static int Type_1 = 1;
         /// <summary>
-        /// 城市TMK用户
+        /// 性别
         /// </summary>
-        public static int Role_3 = 3;
+        public static int Type_2 = 2;
         /// <summary>
-        /// 中心前台用户
+        /// 民族
         /// </summary>
-        public static int Role_4 = 4;
+        public static int Type_3 = 3;
         /// <summary>
-        /// 中心课程顾问用户
+        /// 政治面貌
         /// </summary>
-        public static int Role_5 = 5;
+        public static int Type_4 = 4;
         /// <summary>
-        /// 中心财务用户
+        /// 是否
         /// </summary>
-        public static int Role_6 = 6;
+        public static int Type_5 = 5;
         /// <summary>
-        /// 中心Tutor用户
+        /// 户口性质
         /// </summary>
-        public static int Role_7 = 7;
+        public static int Type_6 = 6;
         /// <summary>
-        /// 中心外教用户
+        /// 结婚状况
         /// </summary>
-        public static int Role_10 = 10;
+        public static int Type_7 = 7;
         /// <summary>
-        /// 中心教学助理用户
+        /// 子女情况
         /// </summary>
-        public static int Role_11 = 11;
-        /// <summary>
-        /// 城市校长
-        /// </summary>
-        public static int Role_15 = 15;
-        /// <summary>
-        /// 城市TMK主管
-        /// </summary>
-        public static int Role_22 = 22;
-        /// <summary>
-        /// 中心主任
-        /// </summary>
-        public static int Role_31 = 31;
-        /// <summary>
-        /// 总部TMK主管
-        /// </summary>
-        public static int Role_47 = 47;
-        /// <summary>
-        /// 跨城市校长
-        /// </summary>
-        public static int Role_51 = 51;
-        /// <summary>
-        /// 总部特殊合同处理管理
-        /// </summary>
-        public static int Role_53 = 53;
-        /// <summary>
-        /// 跨城市TMK主管
-        /// </summary>
-        public static int Role_55 = 55;
+        public static int Type_8 = 8;
     }
 
 	public class UIStyle
@@ -256,7 +154,7 @@ namespace GlobalFacade
 	}
 
 	/// <summary>
-	/// 提醒功能 Allen CreateTime：2008-06-25
+	/// 提醒功能
 	/// </summary>
 	public class UserAlert
 	{

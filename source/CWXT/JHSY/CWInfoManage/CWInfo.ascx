@@ -29,12 +29,6 @@
                     <td style="width:50%;">
                         <asp:TextBox ID="txtVillageName" runat="server" Width="80%" MaxLength="100"></asp:TextBox>
                     </td>
-                    <td class="Field">
-                        <nobr>地理位置</nobr>
-                    </td>
-                    <td style="width:50%;">
-                        <asp:TextBox ID="txtLocation" runat="server" Width="80%" MaxLength="255"></asp:TextBox>
-                    </td>
                 </tr>
                 <tr>
                     <td class="Field">
@@ -65,6 +59,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="FieldTop">
+                        <nobr>地理位置</nobr>
+                    </td>
+                    <td style="width:50%;">
+                        <asp:TextBox ID="txtLocation" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="255"></asp:TextBox>
+                    </td>
                     <td class="FieldTop">
                         <nobr>备注</nobr>
                     </td>

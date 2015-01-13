@@ -6,10 +6,10 @@
 <html>
 <head>
     <title>编辑村务信息</title>
-    <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
-    <meta name="CODE_LANGUAGE" content="C#">
-    <meta name="vs_defaultClientScript" content="JavaScript">
-    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+    <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1" />
+    <meta name="CODE_LANGUAGE" content="C#" />
+    <meta name="vs_defaultClientScript" content="JavaScript" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
 </head>
 <body class="common">
     <form id="Form1" method="post" runat="server">
@@ -32,7 +32,7 @@
                 </td>
             </tr>
         </table>
-        <uccs:cwinfo id="ucCWInfo" runat="server"></uccs:cwinfo>
+        <uccs:CWInfo ID="ucCWInfo" runat="server"></uccs:CWInfo>
     </form>
 </body>
 </html>
