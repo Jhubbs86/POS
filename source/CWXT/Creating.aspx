@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <img src="image/JSZ_1.jpg" />
+        <img src="image/JSZ_1.jpg"/>
     </div>
     </form>
 </body>

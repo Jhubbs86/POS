@@ -22,11 +22,21 @@ namespace CWXT
             "SELECT * FROM Menu WHERE IsLeaf=0 AND IsValid = 1 AND Parent = 0 AND " + strSqlWhere
             + " ORDER BY [Parent],[DisplayOrder]", CommandType.Text);
 
-            
+            string url = "Menu.aspx?Parent=0&Title=系统菜单";
+            HtmlAnchor a = new HtmlAnchor();
+            a.InnerHtml = "主菜单";
+            a.HRef = "javascript:void(0)";
+            a.Style.Add("text-decoration", "none");
+            a.Style.Add("padding-left", "10px");
+            a.Style.Add("padding-right", "10px");
+            a.Attributes.Add("onclick", string.Format("MenuItemClick(this,\"{0}\")", url));
+
+            this.divContainer.Controls.Add(a);
+
             foreach (DataRow dr in dtMenuItems.Rows)
             {
-                string url = "Menu.aspx?Parent=" + dr["PKID"].ToString() + "&Title=" + dr["Chinesename"].ToString();
-                HtmlAnchor a = new HtmlAnchor();
+                url = "Menu.aspx?Parent=" + dr["PKID"].ToString() + "&Title=" + dr["Chinesename"].ToString();
+                a = new HtmlAnchor();
                 a.InnerHtml = dr["Chinesename"].ToString() ;
                 a.HRef = "javascript:void(0)";
                 a.Style.Add("text-decoration", "none");
