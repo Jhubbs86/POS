@@ -6,11 +6,13 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body leftmargin="0" topmargin="0">
     <form id="form1" runat="server">
-    <div>
-        <img src="image/JSZ_1.jpg"/>
-    </div>
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%" >
+            <div>
+                <img src="image/JSZ_1.jpg"/>
+            </div>
+        </table>
     </form>
 </body>
 </html>
