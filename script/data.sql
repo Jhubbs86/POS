@@ -60,6 +60,28 @@ BEGIN
 			)
 END
 
+IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '基础数据' HAVING(COUNT(*)>0))
+BEGIN
+     INSERT INTO [CWXT].[dbo].[Menu]
+           (
+				[ChineseName]
+				,[URL]
+				,[Parent]
+				,[DisplayOrder]
+				,[IsValid]
+				,[IsLeaf]
+			)
+     VALUES
+           (
+				'基础数据'
+				,''
+				,0
+				,2
+				,1
+				,0
+			)
+END
+
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '计划生育' HAVING(COUNT(*)>0))
 BEGIN
      INSERT INTO [CWXT].[dbo].[Menu]
@@ -76,14 +98,14 @@ BEGIN
 				'计划生育'
 				,''
 				,0
-				,2
+				,3
 				,1
 				,0
 			)
 END
 
 
-IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '角色管理' HAVING(COUNT(*)>0))
+IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '用户组管理' HAVING(COUNT(*)>0))
 BEGIN
      INSERT INTO [CWXT].[dbo].[Menu]
            (
@@ -94,7 +116,7 @@ BEGIN
 				,[IsValid]
 				,[IsLeaf]
 			)
-     SELECT '角色管理','SystemManage/RoleManage/RoleList.aspx',Menu.PKID,1,1,1
+     SELECT '用户组管理','SystemManage/RoleManage/RoleList.aspx',Menu.PKID,1,1,1
      FROM   [CWXT].[dbo].[Menu] WHERE IsValid = 1 AND [ChineseName] = '系统管理'
 END
 IF   NOT EXISTS (SELECT COUNT(*) FROM [CWXT].[dbo].[Menu] WHERE [IsValid] = 1 AND [ChineseName] = '用户管理' HAVING(COUNT(*)>0))

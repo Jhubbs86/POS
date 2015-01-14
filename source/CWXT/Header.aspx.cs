@@ -22,7 +22,7 @@ namespace CWXT
             "SELECT * FROM Menu WHERE IsLeaf=0 AND IsValid = 1 AND Parent = 0 AND " + strSqlWhere
             + " ORDER BY [Parent],[DisplayOrder]", CommandType.Text);
 
-            string url = "Menu.aspx?Parent=0&Title=系统菜单";
+            string url = "Menu.aspx?Parent=0&Title=主菜单";
             HtmlAnchor a = new HtmlAnchor();
             a.InnerHtml = "主菜单";
             a.HRef = "javascript:void(0)";

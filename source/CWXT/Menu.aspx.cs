@@ -33,7 +33,7 @@ namespace CWXT
                 if (Request.QueryString["Title"] != null)
                     title = Request.QueryString["Title"];
                 else
-                    title = "系统菜单";
+                    title = "主菜单";
                 this.lb_MenuTitle.Text = title;
 
                 strWhere = " PKID IN (SELECT  RoleMenu.FK_Menu FROM dbo.[User] "
