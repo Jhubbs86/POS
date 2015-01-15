@@ -40,8 +40,8 @@ namespace CWXT
                 a.InnerHtml = dr["Chinesename"].ToString() ;
                 a.HRef = "javascript:void(0)";
                 a.Style.Add("text-decoration", "none");
-                a.Style.Add("padding-left", "10px");
-                a.Style.Add("padding-right", "10px");
+                a.Style.Add("padding-left", "6px");
+                a.Style.Add("padding-right", "6px");
                 a.Attributes.Add("onclick", string.Format("MenuItemClick(this,\"{0}\")", url));
                 
                 this.divContainer.Controls.Add(a);
