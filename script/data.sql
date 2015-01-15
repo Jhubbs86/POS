@@ -139,7 +139,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'统战'
 				,''
 				,0
@@ -161,7 +161,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'工会'
 				,''
 				,0
@@ -183,7 +183,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'妇联'
 				,''
 				,0
@@ -205,7 +205,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'民政社救'
 				,''
 				,0
@@ -227,7 +227,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'老龄'
 				,''
 				,0
@@ -249,7 +249,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'护塘小区管理'
 				,''
 				,0
@@ -271,7 +271,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'老年活动室'
 				,''
 				,0
@@ -293,7 +293,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'门卫'
 				,''
 				,0
@@ -315,7 +315,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'丧事简办'
 				,''
 				,0
@@ -337,7 +337,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'各类证明'
 				,''
 				,0
@@ -360,7 +360,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'纪检'
 				,''
 				,0
@@ -382,7 +382,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'调解'
 				,''
 				,0
@@ -404,7 +404,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'安全'
 				,''
 				,0
@@ -426,7 +426,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'农副业'
 				,''
 				,0
@@ -448,7 +448,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'河道保洁'
 				,''
 				,0
@@ -471,7 +471,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'市场管理'
 				,''
 				,0
@@ -493,7 +493,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'水电管理'
 				,''
 				,0
@@ -515,7 +515,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'综治群众工作室'
 				,''
 				,0
@@ -537,7 +537,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'宣传'
 				,''
 				,0
@@ -560,7 +560,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'文教卫生'
 				,''
 				,0
@@ -583,7 +583,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'红十字'
 				,''
 				,0
@@ -606,7 +606,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'经济管理'
 				,''
 				,0
@@ -629,7 +629,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'出纳'
 				,''
 				,0
@@ -651,7 +651,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'卫生室'
 				,''
 				,0
@@ -674,7 +674,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'土地房屋'
 				,''
 				,0
@@ -696,7 +696,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'治保'
 				,''
 				,0
@@ -718,7 +718,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'民兵'
 				,''
 				,0
@@ -740,7 +740,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'家庭财产保险管理'
 				,''
 				,0
@@ -762,7 +762,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'团支部'
 				,''
 				,0
@@ -784,7 +784,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+          ( 
 				'电子政务平台管理'
 				,''
 				,0
@@ -806,7 +806,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'会议记录'
 				,''
 				,0
@@ -829,7 +829,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'会务接待'
 				,''
 				,0
@@ -852,7 +852,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'会场布置'
 				,''
 				,0
@@ -875,7 +875,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'电教设施管理'
 				,''
 				,0
@@ -898,7 +898,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'科普活动室'
 				,''
 				,0
@@ -920,7 +920,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'村级招商引资'
 				,''
 				,0
@@ -944,7 +944,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'水利排管'
 				,''
 				,0
@@ -966,7 +966,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'农业组织化'
 				,''
 				,0
@@ -989,7 +989,7 @@ BEGIN
 				,[IsLeaf]
 			)
      VALUES
-           
+           (
 				'项目建设协调'
 				,''
 				,0
