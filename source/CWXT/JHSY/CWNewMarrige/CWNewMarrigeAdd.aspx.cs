@@ -25,7 +25,7 @@ namespace CWXT.JHSY.CWNewMarrige
 		{
 			if(this.ucCWNewMarrige.ValidatePage())
 			{
-                //ucCWNewMarrige.Save();
+                ucCWNewMarrige.Save();
 				base.GoBack();
 			}
 			return false;

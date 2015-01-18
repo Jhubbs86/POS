@@ -30,6 +30,8 @@ namespace CWXT.JHSY.CWFamilySpecHelp
         private void SetViewStatus()
         {
             GlobalFacade.Utils.SetReadonly(this);
+
+            gpCWInfo.Readonly = true;
         }
 
         private void SetEditStatus()
@@ -87,12 +89,16 @@ namespace CWXT.JHSY.CWFamilySpecHelp
 
             if (bo.HaveRecord)
             {
-                this.txtCWID.Text = bo.FK_CWID.Value.ToString();
+                if (bo.FK_CWID.Value > 0)
+                    this.gpCWInfo.SelectedValue = bo.FK_CWID.Value.ToString();
                 this.txtAppIDCardNo.Text = bo.AppIDCardNo.Value;
                 this.txtAppName.Text = bo.AppName.Value;
-                this.txtSex.Text = bo.Sex.Value.ToString();
-                this.txtHolderPorp.Text = bo.HolderPorp.Value.ToString();
-                this.txtHelpType.Text = bo.HelpType.Value.ToString();
+                if (bo.Sex.Value > 0)
+                    this.ddlSex.SelectedValue = bo.Sex.Value.ToString();
+                if (bo.HolderPorp.Value > 0)
+                    this.ddlHolderPorp.Text = bo.HolderPorp.Value.ToString();
+                if (bo.HelpType.Value > 0)
+                    this.ddlHelpType.Text = bo.HelpType.Value.ToString();
                 this.txtRealMonth.Text = bo.RealMonth.Value.ToString();
                 this.txtHelpMoney.Text = bo.HelpMoney.Value.ToString();
                 this.txtHelpNo.Text = bo.HelpNo.Value;
@@ -114,59 +120,37 @@ namespace CWXT.JHSY.CWFamilySpecHelp
             return Page.IsValid;
         }
 
-        private void validatetxtCWID_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateCWInfo_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if()
-            //{
-            //    this.validatetxtCWID.ErrorMessage = "请选择所属村镇";
-            //    args.IsValid = false;
-            //    return;
-            //}
+            if (this.gpCWInfo.SelectedValue == string.Empty || this.gpCWInfo.SelectedValue == "0")
+            {
+                args.IsValid = false;
+                return;
+            }
         }
 
-        private void validatetxtSex_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateRealMonth_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if (!string.IsNullOrEmpty(this.txtSex.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtSex.Text.Trim()))
-            //{
-            //    this.validatetxtSex.ErrorMessage = "性别只能为数字类型";
-            //    args.IsValid = false;
-            //}
+            if (!string.IsNullOrEmpty(this.txtRealMonth.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtRealMonth.Text.Trim()))
+            {
+                args.IsValid = false;
+            }
         }
 
-        private void validatetxtHolderPorp_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateHelpMoney_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if (!string.IsNullOrEmpty(this.txtHolderPorp.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtHolderPorp.Text.Trim()))
-            //{
-            //    this.validatetxtHolderPorp.ErrorMessage = "户口性质只能为数字类型";
-            //    args.IsValid = false;
-            //}
+            if (!string.IsNullOrEmpty(this.txtHelpMoney.Text.Trim()) && !GlobalFacade.Utils.IsDecimal(this.txtHelpMoney.Text.Trim()))
+            {
+                args.IsValid = false;
+            }
         }
 
-        private void validatetxtHelpType_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateHelpYear_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if (!string.IsNullOrEmpty(this.txtHelpType.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtHelpType.Text.Trim()))
-            //{
-            //    this.validatetxtHelpType.ErrorMessage = "扶助类型只能为数字类型";
-            //    args.IsValid = false;
-            //}
-        }
-
-        private void validatetxtRealMonth_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            //if (!string.IsNullOrEmpty(this.txtRealMonth.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtRealMonth.Text.Trim()))
-            //{
-            //    this.validatetxtRealMonth.ErrorMessage = "享受时间只能为数字类型";
-            //    args.IsValid = false;
-            //}
-        }
-
-        private void validatetxtHelpMoney_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            //if (!string.IsNullOrEmpty(this.txtHelpMoney.Text.Trim()) && !GlobalFacade.Utils.IsDecimal(this.txtHelpMoney.Text.Trim()))
-            //{
-            //    this.validatetxtHelpMoney.ErrorMessage = "享受金额只能为数字类型";
-            //    args.IsValid = false;
-            //}
+            if (!string.IsNullOrEmpty(this.txtHelpYear.Text.Trim()))
+            {
+                args.IsValid = BusinessRule.Common.ValidateIntegerStyle(this.txtHelpYear.Text.Trim()) ? true : false;
+            }
         }
         #endregion
 
@@ -178,19 +162,19 @@ namespace CWXT.JHSY.CWFamilySpecHelp
             BusinessMapping.CWFamilySpecHelp bo = new BusinessMapping.CWFamilySpecHelp();
             bo.SessionInstance = new Wicresoft.Session.Session();
 
-            if (this.txtCWID.Text.Trim() != "")
-                bo.FK_CWID.Value = Convert.ToInt32(this.txtCWID.Text.Trim());
+            if (this.gpCWInfo.SelectedValue != string.Empty && this.gpCWInfo.SelectedValue != "0")
+                bo.FK_CWID.Value = Convert.ToInt32(this.gpCWInfo.SelectedValue);
 
             bo.AppIDCardNo.Value = this.txtAppIDCardNo.Text.Trim();
             bo.AppName.Value = this.txtAppName.Text.Trim();
-            if (this.txtSex.Text.Trim() != "")
-                bo.Sex.Value = Convert.ToInt32(this.txtSex.Text.Trim());
+            if (this.ddlSex.SelectedValue != string.Empty && this.ddlSex.SelectedValue != "0")
+                bo.Sex.Value = Convert.ToInt32(this.ddlSex.SelectedValue);
 
-            if (this.txtHolderPorp.Text.Trim() != "")
-                bo.HolderPorp.Value = Convert.ToInt32(this.txtHolderPorp.Text.Trim());
+            if (this.ddlHolderPorp.SelectedValue != "" && this.ddlHolderPorp.SelectedValue != "0")
+                bo.HolderPorp.Value = Convert.ToInt32(this.ddlHolderPorp.SelectedValue);
 
-            if (this.txtHelpType.Text.Trim() != "")
-                bo.HelpType.Value = Convert.ToInt32(this.txtHelpType.Text.Trim());
+            if (this.ddlHelpType.SelectedValue != "" && this.ddlHelpType.SelectedValue != "0")
+                bo.HelpType.Value = Convert.ToInt32(this.ddlHelpType.SelectedValue);
 
             if (this.txtRealMonth.Text.Trim() != "")
                 bo.RealMonth.Value = Convert.ToInt32(this.txtRealMonth.Text.Trim());
@@ -201,6 +185,7 @@ namespace CWXT.JHSY.CWFamilySpecHelp
             bo.HelpNo.Value = this.txtHelpNo.Text.Trim();
             bo.HelpYear.Value = this.txtHelpYear.Text.Trim();
 
+            bo.CreateUser.Value = userID;
             bo.CreateTime.Value = DateTime.Now;
             bo.Memo.Value = this.txtMemo.Text.Trim();
 
@@ -222,19 +207,27 @@ namespace CWXT.JHSY.CWFamilySpecHelp
             {
                 int userID = GlobalFacade.SystemContext.GetContext().UserID;
 
-                if (this.txtCWID.Text.Trim() != "")
-                    bo.FK_CWID.Value = Convert.ToInt32(this.txtCWID.Text.Trim());
+                if (this.gpCWInfo.SelectedValue != string.Empty && this.gpCWInfo.SelectedValue != "0")
+                    bo.FK_CWID.Value = Convert.ToInt32(this.gpCWInfo.SelectedValue);
+                else
+                    bo.FK_CWID.Value = 0;
 
                 bo.AppIDCardNo.Value = this.txtAppIDCardNo.Text.Trim();
                 bo.AppName.Value = this.txtAppName.Text.Trim();
-                if (this.txtSex.Text.Trim() != "")
-                    bo.Sex.Value = Convert.ToInt32(this.txtSex.Text.Trim());
+                if (this.ddlSex.SelectedValue != string.Empty && this.ddlSex.SelectedValue != "0")
+                    bo.Sex.Value = Convert.ToInt32(this.ddlSex.SelectedValue);
+                else
+                    bo.Sex.Value = 0;
 
-                if (this.txtHolderPorp.Text.Trim() != "")
-                    bo.HolderPorp.Value = Convert.ToInt32(this.txtHolderPorp.Text.Trim());
+                if (this.ddlHolderPorp.SelectedValue != "" && this.ddlHolderPorp.SelectedValue != "0")
+                    bo.HolderPorp.Value = Convert.ToInt32(this.ddlHolderPorp.SelectedValue);
+                else
+                    bo.HolderPorp.Value = 0;
 
-                if (this.txtHelpType.Text.Trim() != "")
-                    bo.HelpType.Value = Convert.ToInt32(this.txtHelpType.Text.Trim());
+                if (this.ddlHelpType.SelectedValue != "" && this.ddlHelpType.SelectedValue != "0")
+                    bo.HelpType.Value = Convert.ToInt32(this.ddlHelpType.SelectedValue);
+                else
+                    bo.HelpType.Value = 0;
 
                 if (this.txtRealMonth.Text.Trim() != "")
                     bo.RealMonth.Value = Convert.ToInt32(this.txtRealMonth.Text.Trim());
@@ -250,7 +243,26 @@ namespace CWXT.JHSY.CWFamilySpecHelp
                 bo.Update();
             }
         }
+        #endregion
 
+        #region 绑定下拉列表
+        public static void DictionaryList(System.Web.UI.WebControls.DropDownList DropOnDictionary, string type)
+        {
+            BusinessObjectCollection boc = new BusinessObjectCollection("Dictionary");
+            boc.SessionInstance = new Wicresoft.Session.Session();
+
+            BusinessFilter filter = new BusinessFilter("Dictionary");
+            filter.AddFilterItem("IsValid", "1", Operation.Equal, FilterType.NumberType, AndOr.AND);
+            filter.AddFilterItem("Type", type, Operation.Equal, FilterType.NumberType, AndOr.AND);
+
+            boc.AddFilter(filter);
+
+            DropOnDictionary.DataSource = boc.GetDataTable();
+            DropOnDictionary.DataTextField = "Name";
+            DropOnDictionary.DataValueField = "PKID";
+            DropOnDictionary.DataBind();
+            DropOnDictionary.Items.Insert(0, new ListItem(ResourceManager.Instance.GetString("PleaseSelect"), "0"));
+        }
         #endregion
 
         #region Web Form Designer generated code
@@ -266,19 +278,21 @@ namespace CWXT.JHSY.CWFamilySpecHelp
 
         private void AppendServerEvents()
         {
-            this.validatetxtCWID.ServerValidate += new ServerValidateEventHandler(validatetxtCWID_ServerValidate);
-            this.validatetxtSex.ServerValidate += new ServerValidateEventHandler(validatetxtSex_ServerValidate);
-            this.validatetxtHolderPorp.ServerValidate += new ServerValidateEventHandler(validatetxtHolderPorp_ServerValidate);
-            this.validatetxtHelpType.ServerValidate += new ServerValidateEventHandler(validatetxtHelpType_ServerValidate);
-            this.validatetxtRealMonth.ServerValidate += new ServerValidateEventHandler(validatetxtRealMonth_ServerValidate);
-            this.validatetxtHelpMoney.ServerValidate += new ServerValidateEventHandler(validatetxtHelpMoney_ServerValidate);
+            gpCWInfo.BusinessObjectViewName = "CWInfoDefaultView";
+
+            this.validateCWInfo.ServerValidate += new ServerValidateEventHandler(validateCWInfo_ServerValidate);
+            this.validateRealMonth.ServerValidate += new ServerValidateEventHandler(validateRealMonth_ServerValidate);
+            this.validateHelpMoney.ServerValidate += new ServerValidateEventHandler(validateHelpMoney_ServerValidate);
+            this.validateHelpYear.ServerValidate += new ServerValidateEventHandler(validateHelpYear_ServerValidate);
 
             BindForeignKeyData();
         }
 
         private void BindForeignKeyData()
         {
-
+            DictionaryList(ddlSex, GlobalFacade.DictionaryType.Type_2.ToString());
+            DictionaryList(ddlHolderPorp, GlobalFacade.DictionaryType.Type_6.ToString());
+            DictionaryList(ddlHelpType, GlobalFacade.DictionaryType.Type_9.ToString());
         }
         #endregion
     }

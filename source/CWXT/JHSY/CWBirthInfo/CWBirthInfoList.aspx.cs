@@ -48,7 +48,7 @@ namespace CWXT.JHSY.CWBirthInfo
         {
             int totalCount = 0;
             BusinessRule.JHSY.CWBirthInfo rule = new BusinessRule.JHSY.CWBirthInfo();
-            this.tblSchema = rule.GetCWBirthInfoList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.DESC, this.GetLastQueryCondition(this.dgCWBirthInfo.UniqueID));
+            this.tblSchema = rule.GetCWBirthInfoList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.ASC, this.GetLastQueryCondition(this.dgCWBirthInfo.UniqueID));
             ucCustomPaging.TotalRecords = totalCount;
 
             this.BindGrid();

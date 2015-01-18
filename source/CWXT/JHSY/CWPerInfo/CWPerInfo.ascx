@@ -39,7 +39,7 @@
                         <nobr>身份证号*</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtIDCardNo" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtIDCardNo" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -47,7 +47,7 @@
                         <nobr>姓名*</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtName" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtName" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                     <td class="Field">
                         <nobr>性别*</nobr>
@@ -81,7 +81,7 @@
                         <nobr>户主姓名</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtHolderName" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtHolderName" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -89,7 +89,7 @@
                         <nobr>户主身份证号</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtHolderIDCardNo" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtHolderIDCardNo" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                     <td class="Field">
                         <nobr>户口性质*</nobr>
@@ -103,13 +103,13 @@
                         <nobr>户籍地址</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtHolderAddress" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtHolderAddress" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="255"></asp:TextBox>
                     </td>
                     <td class="Field">
                         <nobr>居住地址</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtLiveAddress" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtLiveAddress" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="255"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -117,13 +117,13 @@
                         <nobr>联系电话</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtLinkPhone" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtLinkPhone" runat="server" Width="80%" MaxLength="100"></asp:TextBox>
                     </td>
                     <td class="Field">
                         <nobr>工作单位</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtWorkUnit" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtWorkUnit" runat="server" Width="80%" MaxLength="100"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -145,13 +145,13 @@
                         <nobr>结婚登记证明号</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtMarrigeNo" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtMarrigeNo" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                     <td class="Field">
                         <nobr>对象姓名</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtMarrigeName" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtMarrigeName" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -159,7 +159,7 @@
                         <nobr>对象身份证号</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtMarrigeIDCardNo" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtMarrigeIDCardNo" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                     <td class="Field">
                         <nobr>子女情况</nobr>
@@ -175,25 +175,19 @@
                     <td style="width: 50%;">
                         <asp:DropDownList ID="ddlIsSingle" runat="server" Width="80%"></asp:DropDownList>
                     </td>
+                </tr>
+                <tr>
                     <td class="Field">
                         <nobr>小孩姓名1</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtChildName1" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtChildName1" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
-                </tr>
-                <tr>
                     <td class="Field">
                         <nobr>小孩身份证号1</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtChildIDCardNo1" runat="server" Width="80%"></asp:TextBox>
-                    </td>
-                    <td class="Field">
-                        <nobr>小孩户籍地址1</nobr>
-                    </td>
-                    <td style="width: 50%;">
-                        <asp:TextBox ID="txtChildAddress1" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtChildIDCardNo1" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -201,7 +195,7 @@
                         <nobr>小孩出生证号1</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtBirthNo1" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtBirthNo1" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                     <td class="Field">
                         <nobr>出生日期1</nobr>
@@ -215,27 +209,27 @@
                         <nobr>收养文书号1</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtAdoptNo1" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtAdoptNo1" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="20"></asp:TextBox>
                     </td>
-                    <td class="Field">
-                        <nobr>小孩姓名2</nobr>
+                     <td class="Field">
+                        <nobr>小孩户籍地址1</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtChildName2" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtChildAddress1" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="255"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="Field">
+                        <nobr>小孩姓名2</nobr>
+                    </td>
+                    <td style="width: 50%;">
+                        <asp:TextBox ID="txtChildName2" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
+                    </td>
+                    <td class="Field">
                         <nobr>小孩身份证号2</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtChildIDCardNo2" runat="server" Width="80%"></asp:TextBox>
-                    </td>
-                    <td class="Field">
-                        <nobr>小孩户籍地址2</nobr>
-                    </td>
-                    <td style="width: 50%;">
-                        <asp:TextBox ID="txtChildAddress2" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtChildIDCardNo2" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -243,7 +237,7 @@
                         <nobr>小孩出生证号2</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtBirthNo2" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtBirthNo2" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                     <td class="Field">
                         <nobr>出生日期2</nobr>
@@ -257,27 +251,27 @@
                         <nobr>收养文书号2</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtAdoptNo2" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtAdoptNo2" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="20"></asp:TextBox>
                     </td>
-                    <td class="Field">
-                        <nobr>小孩姓名3</nobr>
+                     <td class="Field">
+                        <nobr>小孩户籍地址2</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtChildName3" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtChildAddress2" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="255"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="Field">
+                        <nobr>小孩姓名3</nobr>
+                    </td>
+                    <td style="width: 50%;">
+                        <asp:TextBox ID="txtChildName3" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
+                    </td>
+                    <td class="Field">
                         <nobr>小孩身份证号3</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtChildIDCardNo3" runat="server" Width="80%"></asp:TextBox>
-                    </td>
-                    <td class="Field">
-                        <nobr>小孩户籍地址3</nobr>
-                    </td>
-                    <td style="width: 50%;">
-                        <asp:TextBox ID="txtChildAddress3" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtChildIDCardNo3" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -285,7 +279,7 @@
                         <nobr>小孩出生证号3</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtBirthNo3" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtBirthNo3" runat="server" Width="80%" MaxLength="20"></asp:TextBox>
                     </td>
                     <td class="Field">
                         <nobr>出生日期3</nobr>
@@ -299,7 +293,13 @@
                         <nobr>收养文书号3</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtAdoptNo3" runat="server" Width="80%"></asp:TextBox>
+                        <asp:TextBox ID="txtAdoptNo3" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="20"></asp:TextBox>
+                    </td>
+                    <td class="Field">
+                        <nobr>小孩户籍地址3</nobr>
+                    </td>
+                    <td style="width: 50%;">
+                        <asp:TextBox ID="txtChildAddress3" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="255"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -307,7 +307,7 @@
                         <nobr>备注</nobr>
                     </td>
                     <td style="width: 50%;">
-                        <asp:TextBox ID="txtMemo" runat="server" Width="80%" TextMode="MultiLine" Height="50"></asp:TextBox>
+                        <asp:TextBox ID="txtMemo" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="255"></asp:TextBox>
                     </td>
                 </tr>
             </table>

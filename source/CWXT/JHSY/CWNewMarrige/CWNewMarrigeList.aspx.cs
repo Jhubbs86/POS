@@ -48,7 +48,7 @@ namespace CWXT.JHSY.CWNewMarrige
 		{
 			int totalCount = 0;
 			BusinessRule.JHSY.CWNewMarrige rule = new BusinessRule.JHSY.CWNewMarrige();
-			this.tblSchema = rule.GetCWNewMarrigeList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.DESC, this.GetLastQueryCondition(this.dgCWNewMarrige.UniqueID));
+			this.tblSchema = rule.GetCWNewMarrigeList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.ASC, this.GetLastQueryCondition(this.dgCWNewMarrige.UniqueID));
 			ucCustomPaging.TotalRecords = totalCount;
 
 			this.BindGrid();

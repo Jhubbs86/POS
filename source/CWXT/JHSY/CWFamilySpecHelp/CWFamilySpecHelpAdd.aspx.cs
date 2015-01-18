@@ -25,7 +25,7 @@ namespace CWXT.JHSY.CWFamilySpecHelp
 		{
 			if(this.ucCWFamilySpecHelp.ValidatePage())
 			{
-                //ucCWFamilySpecHelp.Save();
+                ucCWFamilySpecHelp.Save();
 				base.GoBack();
 			}
 			return false;

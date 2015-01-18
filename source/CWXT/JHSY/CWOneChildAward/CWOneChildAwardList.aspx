@@ -40,10 +40,10 @@
                                 <asp:Label ID="lblQueryDesc" runat="server"></asp:Label>
                             </td>
                             <td class="ToolBarStyle">
-                                <%--<asp:ImageButton ID="btnNew" runat="server" AlternateText="新增" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_NEW_UP.gif"></asp:ImageButton>
+                                <asp:ImageButton ID="btnNew" runat="server" AlternateText="新增" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_NEW_UP.gif"></asp:ImageButton>
                                 <asp:ImageButton ID="btnEdit" runat="server" AlternateText="编辑" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_EDIT_UP.gif"></asp:ImageButton>
                                 <asp:ImageButton ID="btnDel" runat="server" AlternateText="删除" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_DEL_UP.gif"></asp:ImageButton>
-                                <asp:ImageButton ID="btnView" runat="server" AlternateText="查看" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_VIEW_UP.gif"></asp:ImageButton>--%>
+                                <asp:ImageButton ID="btnView" runat="server" AlternateText="查看" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_VIEW_UP.gif"></asp:ImageButton>
                             </td>
                         </tr>
                         <tr>
@@ -64,7 +64,7 @@
                                         <asp:BoundColumn DataField="OwnName" HeaderText="享受人姓名"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="ChildIDCardNo" HeaderText="孩子身份证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="ChildName" HeaderText="孩子姓名"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="BirthDate" HeaderText="出生年月" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="BirthDate" HeaderText="出生年月" DataFormatString="{0:yyyy-MM-dd}"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="OneChildNo" HeaderText="独生子女光荣证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="RealMonth" HeaderText="享受月数"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="AwardFee" HeaderText="金额"></asp:BoundColumn>
@@ -73,8 +73,8 @@
                                         <asp:BoundColumn DataField="ABCNo" HeaderText="农行卡号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="AuthIDCardNo" HeaderText="持卡人身份证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="AwardYear" HeaderText="年份"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="CreateUser" HeaderText="创建人"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="CreateTime" HeaderText="创建时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
+                                        <%--<asp:BoundColumn DataField="CreateUser" HeaderText="创建人"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="CreateTime" HeaderText="创建时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>--%>
                                     </Columns>
                                 </asp:DataGrid>
                                 <uccs:CustomPaging ID="ucCustomPaging" runat="server"></uccs:CustomPaging>

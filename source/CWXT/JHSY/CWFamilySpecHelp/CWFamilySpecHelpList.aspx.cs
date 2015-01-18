@@ -48,7 +48,7 @@ namespace CWXT.JHSY.CWFamilySpecHelp
 		{
 			int totalCount = 0;
 			BusinessRule.JHSY.CWFamilySpecHelp rule = new BusinessRule.JHSY.CWFamilySpecHelp();
-			this.tblSchema = rule.GetCWFamilySpecHelpList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.DESC, this.GetLastQueryCondition(this.dgCWFamilySpecHelp.UniqueID));
+			this.tblSchema = rule.GetCWFamilySpecHelpList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.ASC, this.GetLastQueryCondition(this.dgCWFamilySpecHelp.UniqueID));
 			ucCustomPaging.TotalRecords = totalCount;
 
 			this.BindGrid();
@@ -186,14 +186,14 @@ namespace CWXT.JHSY.CWFamilySpecHelp
 		
 		private void AppendServerEvents()
 		{
-            //this.btnNew.Click += new System.Web.UI.ImageClickEventHandler(this.btnNew_Click);
-            //this.btnEdit.Click += new System.Web.UI.ImageClickEventHandler(this.btnEdit_Click);
-            //this.btnDel.Click += new System.Web.UI.ImageClickEventHandler(this.btnDel_Click);
-            //this.btnView.Click += new System.Web.UI.ImageClickEventHandler(this.btnView_Click);
+            this.btnNew.Click += new System.Web.UI.ImageClickEventHandler(this.btnNew_Click);
+            this.btnEdit.Click += new System.Web.UI.ImageClickEventHandler(this.btnEdit_Click);
+            this.btnDel.Click += new System.Web.UI.ImageClickEventHandler(this.btnDel_Click);
+            this.btnView.Click += new System.Web.UI.ImageClickEventHandler(this.btnView_Click);
 			this.btnRefreshData.Click += new EventHandler(btnRefreshData_Click);			
 			this.btnQuery.ButtonClick += new Microsoft.Web.UI.WebControls.ToolbarItemEventHandler(btnQuery_ButtonClick);
 			this.dgCWFamilySpecHelp.PreRender += new EventHandler(dgCWFamilySpecHelp_PreRender);
-            //this.btnDel.Attributes.Add("onclick", "return ImgBtnConfirmDelete()");
+            this.btnDel.Attributes.Add("onclick", "return ImgBtnConfirmDelete()");
 
 			// 分页控件初始化
 			this.ucCustomPaging.DataLoader = new CustomControls.CustomPaging.LoadDataHandler(this.LoadData);

@@ -25,7 +25,7 @@ namespace CWXT.JHSY.CWOneChildAward
 		{
 			if(this.ucCWOneChildAward.ValidatePage())
 			{
-                //ucCWOneChildAward.Save();
+                ucCWOneChildAward.Save();
 				base.GoBack();
 			}
 			return false;

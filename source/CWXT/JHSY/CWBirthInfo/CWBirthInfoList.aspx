@@ -77,9 +77,9 @@
                                         <asp:BoundColumn DataField="MothIDCardNo" HeaderText="母亲身份证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="MothAddress" HeaderText="母亲户籍地址"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="MothLinkPhone" HeaderText="母亲联系电话"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="CreateUser" HeaderText="创建人"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="ModifyUser" HeaderText="最后修改人"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="CreateUserName" HeaderText="创建人"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="CreateTime" HeaderText="创建时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="ModifyUserName" HeaderText="最后修改人"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="ModifyTime" HeaderText="最后修改时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>--%>
                                     </Columns>
                                 </asp:DataGrid>

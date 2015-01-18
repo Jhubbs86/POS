@@ -40,10 +40,10 @@
                                 <asp:Label ID="lblQueryDesc" runat="server"></asp:Label>
                             </td>
                             <td class="ToolBarStyle">
-                                <%--<asp:ImageButton ID="btnNew" runat="server" AlternateText="新增" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_NEW_UP.gif"></asp:ImageButton>
+                                <asp:ImageButton ID="btnNew" runat="server" AlternateText="新增" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_NEW_UP.gif"></asp:ImageButton>
                                 <asp:ImageButton ID="btnEdit" runat="server" AlternateText="编辑" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_EDIT_UP.gif"></asp:ImageButton>
                                 <asp:ImageButton ID="btnDel" runat="server" AlternateText="删除" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_DEL_UP.gif"></asp:ImageButton>
-                                <asp:ImageButton ID="btnView" runat="server" AlternateText="查看" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_VIEW_UP.gif"></asp:ImageButton>--%>
+                                <asp:ImageButton ID="btnView" runat="server" AlternateText="查看" CssClass="ImageButtonStyle" ImageUrl="~/image/BTN_VIEW_UP.gif"></asp:ImageButton>
                             </td>
                         </tr>
                         <tr>
@@ -62,14 +62,14 @@
                                         <asp:BoundColumn DataField="CWVillageName" HeaderText="所属村镇"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="AppIDCardNo" HeaderText="身份证号码"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="AppName" HeaderText="申请人姓名"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="Sex" HeaderText="性别"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="HolderPorp" HeaderText="户口性质"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="HelpType" HeaderText="扶助类型"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="SexInfo" HeaderText="性别"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="HolderPorpInfo" HeaderText="户口性质"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="HelpTypeInfo" HeaderText="扶助类型"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="RealMonth" HeaderText="享受时间"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="HelpMoney" HeaderText="享受金额"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="HelpNo" HeaderText="发放证编号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="HelpYear" HeaderText="年份"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="CreateUser" HeaderText="创建人"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="CreateUserName" HeaderText="创建人"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="CreateTime" HeaderText="创建时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
                                     </Columns>
                                 </asp:DataGrid>

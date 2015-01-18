@@ -100,11 +100,11 @@ namespace CWXT.JHSY.CWPerInfo
                 if (bo.Sex.Value > 0)
                     this.ddlSex.SelectedValue = bo.Sex.Value.ToString();
                 if (bo.Nation.Value > 0)
-                    this.ddlNation.Text = bo.Nation.Value.ToString();
+                    this.ddlNation.SelectedValue = bo.Nation.Value.ToString();
                 if (bo.Politics.Value > 0)
-                    this.ddlPolitics.Text = bo.Politics.Value.ToString();
+                    this.ddlPolitics.SelectedValue = bo.Politics.Value.ToString();
                 if (bo.IsHolder.Value > 0)
-                    this.ddlIsHolder.Text = bo.IsHolder.Value.ToString();
+                    this.ddlIsHolder.SelectedValue = bo.IsHolder.Value.ToString();
                 this.txtHolderName.Text = bo.HolderName.Value;
                 this.txtHolderIDCardNo.Text = bo.HolderIDCardNo.Value;
                 if (bo.HolderPorp.Value > 0)
@@ -114,7 +114,7 @@ namespace CWXT.JHSY.CWPerInfo
                 this.txtLinkPhone.Text = bo.LinkPhone.Value;
                 this.txtWorkUnit.Text = bo.WorkUnit.Value;
                 if (bo.MarrigeStatus.Value > 0)
-                    this.ddlMarrigeStatus.Text = bo.MarrigeStatus.Value.ToString();
+                    this.ddlMarrigeStatus.SelectedValue = bo.MarrigeStatus.Value.ToString();
                 if (bo.MarrigeDate.Value != DateTime.MinValue)
                     this.txtMarrigeDate.Text = bo.MarrigeDate.Value.ToString("yyyy-MM-dd");
 
@@ -123,9 +123,9 @@ namespace CWXT.JHSY.CWPerInfo
                 this.txtMarrigeIDCardNo.Text = bo.MarrigeIDCardNo.Value;
 
                 if (bo.Children.Value > 0)
-                    this.ddlChildren.Text = bo.Children.Value.ToString();
+                    this.ddlChildren.SelectedValue = bo.Children.Value.ToString();
                 if (bo.IsSingle.Value > 0)
-                    this.ddlIsSingle.Text = bo.IsSingle.Value.ToString();
+                    this.ddlIsSingle.SelectedValue = bo.IsSingle.Value.ToString();
 
                 this.txtChildName1.Text = bo.ChildName1.Value;
                 this.txtChildIDCardNo1.Text = bo.ChildIDCardNo1.Value;
@@ -426,12 +426,37 @@ namespace CWXT.JHSY.CWPerInfo
                 bo.Memo.Value = this.txtMemo.Text.Trim();
 
                 bo.Update();
+
+                string strSql = string.Empty;
+
+                if (this.txtMarrigeDate.Text == "" && bo.MarrigeDate.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWPerInfo SET MarrigeDate = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (this.txtBirthDate1.Text == "" && bo.BirthDate1.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWPerInfo SET BirthDate1 = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (this.txtBirthDate2.Text == "" && bo.BirthDate2.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWPerInfo SET BirthDate2 = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (this.txtBirthDate3.Text == "" && bo.BirthDate3.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWPerInfo SET BirthDate3 = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (strSql != string.Empty)
+                {
+                    Wicresoft.Session.Session session = new Wicresoft.Session.Session();
+
+                    session.SqlHelper.ExecuteNonQuery(strSql, CommandType.Text);
+                }
             }
         }
 
         #endregion
 
-        #region 绑定下了列表
+        #region 绑定下拉列表
         public static void DictionaryList(System.Web.UI.WebControls.DropDownList DropOnDictionary,string type)
         {
             BusinessObjectCollection boc = new BusinessObjectCollection("Dictionary");

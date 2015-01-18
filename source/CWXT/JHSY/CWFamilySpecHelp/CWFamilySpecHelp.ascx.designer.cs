@@ -22,67 +22,67 @@ namespace CWXT.JHSY.CWFamilySpecHelp {
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummaryList;
         
         /// <summary>
-        /// validatetxtCWID 控件。
+        /// validateCWInfo 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator validatetxtCWID;
+        protected global::System.Web.UI.WebControls.CustomValidator validateCWInfo;
         
         /// <summary>
-        /// validatetxtSex 控件。
+        /// RequiredFieldValidator1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator validatetxtSex;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// validatetxtHolderPorp 控件。
+        /// validateRealMonth 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator validatetxtHolderPorp;
+        protected global::System.Web.UI.WebControls.CustomValidator validateRealMonth;
         
         /// <summary>
-        /// validatetxtHelpType 控件。
+        /// validateHelpMoney 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator validatetxtHelpType;
+        protected global::System.Web.UI.WebControls.CustomValidator validateHelpMoney;
         
         /// <summary>
-        /// validatetxtRealMonth 控件。
+        /// RequiredFieldValidator2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator validatetxtRealMonth;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// validatetxtHelpMoney 控件。
+        /// validateHelpYear 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator validatetxtHelpMoney;
+        protected global::System.Web.UI.WebControls.CustomValidator validateHelpYear;
         
         /// <summary>
-        /// txtCWID 控件。
+        /// gpCWInfo 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCWID;
+        protected global::CWXT.CustomControls.GridPicker gpCWInfo;
         
         /// <summary>
         /// txtAppIDCardNo 控件。
@@ -103,31 +103,31 @@ namespace CWXT.JHSY.CWFamilySpecHelp {
         protected global::System.Web.UI.WebControls.TextBox txtAppName;
         
         /// <summary>
-        /// txtSex 控件。
+        /// ddlSex 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSex;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSex;
         
         /// <summary>
-        /// txtHolderPorp 控件。
+        /// ddlHolderPorp 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHolderPorp;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHolderPorp;
         
         /// <summary>
-        /// txtHelpType 控件。
+        /// ddlHelpType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHelpType;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHelpType;
         
         /// <summary>
         /// txtRealMonth 控件。

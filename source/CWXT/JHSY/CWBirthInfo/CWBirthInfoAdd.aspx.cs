@@ -25,7 +25,7 @@ namespace CWXT.JHSY.CWBirthInfo
         {
             if (this.ucCWBirthInfo.ValidatePage())
             {
-                //ucCWBirthInfo.Save();
+                ucCWBirthInfo.Save();
                 base.GoBack("CWBirthInfoList.aspx");
             }
             return false;

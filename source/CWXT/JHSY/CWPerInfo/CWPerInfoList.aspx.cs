@@ -48,7 +48,7 @@ namespace CWXT.JHSY.CWPerInfo
         {
             int totalCount = 0;
             BusinessRule.JHSY.CWPerInfo rule = new BusinessRule.JHSY.CWPerInfo();
-            this.tblSchema = rule.GetCWPerInfoList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.DESC, this.GetLastQueryCondition(this.dgCWPerInfo.UniqueID));
+            this.tblSchema = rule.GetCWPerInfoList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.ASC, this.GetLastQueryCondition(this.dgCWPerInfo.UniqueID));
             ucCustomPaging.TotalRecords = totalCount;
 
             this.BindGrid();

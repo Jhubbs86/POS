@@ -62,20 +62,20 @@
                                         <asp:BoundColumn DataField="CWVillageName" HeaderText="所属村镇"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="IDCardNo" HeaderText="身份证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="ChildName" HeaderText="姓名"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="Sex" HeaderText="性别"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="SexInfo" HeaderText="性别"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="FathIDCardNo" HeaderText="父亲身份证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="MothIDCardNo" HeaderText="母亲身份证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="OneChildNo" HeaderText="光荣证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="IssueOrg" HeaderText="发证机关"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="BirthDate" HeaderText="出生年月" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="BirthDate" HeaderText="出生年月" DataFormatString="{0:yyyy-MM-dd}"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="InSchool" HeaderText="就读学校"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="FamilyAddress" HeaderText="家庭居住地址"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="FamilyIncome" HeaderText="家庭人均收入"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="InsuNo" HeaderText="独生子女保险卡号"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="CreateUser" HeaderText="创建人"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="ModifyUser" HeaderText="最后修改人"></asp:BoundColumn>
+                                        <%--<asp:BoundColumn DataField="CreateUserName" HeaderText="创建人"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="CreateTime" HeaderText="创建时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="ModifyTime" HeaderText="最后修改时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="ModifyUserName" HeaderText="最后修改人"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="ModifyTime" HeaderText="最后修改时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>--%>
                                     </Columns>
                                 </asp:DataGrid>
                                 <uccs:CustomPaging ID="ucCustomPaging" runat="server"></uccs:CustomPaging>

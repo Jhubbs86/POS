@@ -30,6 +30,9 @@ namespace CWXT.JHSY.CWOneChildAward
         private void SetViewStatus()
         {
             GlobalFacade.Utils.SetReadonly(this);
+
+            txtBirthDate.Attributes.Remove("onfocus");
+            gpCWInfo.Readonly = true;
         }
 
         private void SetEditStatus()
@@ -87,12 +90,13 @@ namespace CWXT.JHSY.CWOneChildAward
 
             if (bo.HaveRecord)
             {
-                this.txtCWID.Text = bo.FK_CWID.Value.ToString();
+                if (bo.FK_CWID.Value > 0)
+                    this.gpCWInfo.SelectedValue = bo.FK_CWID.Value.ToString();
                 this.txtOwnIDCardNo.Text = bo.OwnIDCardNo.Value;
                 this.txtOwnName.Text = bo.OwnName.Value;
                 this.txtChildIDCardNo.Text = bo.ChildIDCardNo.Value;
                 this.txtChildName.Text = bo.ChildName.Value;
-                if (bo.BirthDate.Value.ToString("yyyy-MM-dd") != "0001-01-01")
+                if (bo.BirthDate.Value != DateTime.MinValue)
                     this.txtBirthDate.Text = bo.BirthDate.Value.ToString("yyyy-MM-dd");
 
                 this.txtOneChildNo.Text = bo.OneChildNo.Value;
@@ -120,41 +124,37 @@ namespace CWXT.JHSY.CWOneChildAward
             return Page.IsValid;
         }
 
-        private void validatetxtCWID_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateCWInfo_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if()
-            //{
-            //    this.validatetxtCWID.ErrorMessage = "请选择所属村镇";
-            //    args.IsValid = false;
-            //    return;
-            //}
+            if (this.gpCWInfo.SelectedValue == string.Empty || this.gpCWInfo.SelectedValue == "0")
+            {
+                args.IsValid = false;
+                return;
+            }
         }
 
-        private void validatetxtBirthDate_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateRealMonth_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if(!string.IsNullOrEmpty(this.txtBirthDate.Text.Trim()) && !GlobalFacade.Utils.IsDateTime(this.txtBirthDate.Text.Trim()))
-            //{
-            //    this.validatetxtBirthDate.ErrorMessage = "出生年月只能为数字类型";
-            //    args.IsValid = false;
-            //}
+            if (!string.IsNullOrEmpty(this.txtRealMonth.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtRealMonth.Text.Trim()))
+            {
+                args.IsValid = false;
+            }
         }
 
-        private void validatetxtRealMonth_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateAwardFee_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if(!string.IsNullOrEmpty(this.txtRealMonth.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtRealMonth.Text.Trim()))
-            //{
-            //    this.validatetxtRealMonth.ErrorMessage = "享受月数只能为数字类型";
-            //    args.IsValid = false;
-            //}
+            if (!string.IsNullOrEmpty(this.txtAwardFee.Text.Trim()) && !GlobalFacade.Utils.IsDecimal(this.txtAwardFee.Text.Trim()))
+            {
+                args.IsValid = false;
+            }
         }
 
-        private void validatetxtAwardFee_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateAwardYear_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if(!string.IsNullOrEmpty(this.txtAwardFee.Text.Trim()) && !GlobalFacade.Utils.IsDecimal(this.txtAwardFee.Text.Trim()))
-            //{
-            //    this.validatetxtAwardFee.ErrorMessage = "金额只能为数字类型";
-            //    args.IsValid = false;
-            //}
+            if (!string.IsNullOrEmpty(this.txtAwardYear.Text.Trim()))
+            {
+                args.IsValid = BusinessRule.Common.ValidateIntegerStyle(this.txtAwardYear.Text.Trim()) ? true : false;
+            }
         }
         #endregion
 
@@ -166,8 +166,8 @@ namespace CWXT.JHSY.CWOneChildAward
             BusinessMapping.CWOneChildAward bo = new BusinessMapping.CWOneChildAward();
             bo.SessionInstance = new Wicresoft.Session.Session();
 
-            if (this.txtCWID.Text.Trim() != "")
-                bo.FK_CWID.Value = Convert.ToInt32(this.txtCWID.Text.Trim());
+            if (this.gpCWInfo.SelectedValue != string.Empty && this.gpCWInfo.SelectedValue != "0")
+                bo.FK_CWID.Value = Convert.ToInt32(this.gpCWInfo.SelectedValue);
 
             bo.OwnIDCardNo.Value = this.txtOwnIDCardNo.Text.Trim();
             bo.OwnName.Value = this.txtOwnName.Text.Trim();
@@ -211,8 +211,10 @@ namespace CWXT.JHSY.CWOneChildAward
             {
                 int userID = GlobalFacade.SystemContext.GetContext().UserID;
 
-                if (this.txtCWID.Text.Trim() != "")
-                    bo.FK_CWID.Value = Convert.ToInt32(this.txtCWID.Text.Trim());
+                if (this.gpCWInfo.SelectedValue != string.Empty && this.gpCWInfo.SelectedValue != "0")
+                    bo.FK_CWID.Value = Convert.ToInt32(this.gpCWInfo.SelectedValue);
+                else
+                    bo.FK_CWID.Value = 0;
 
                 bo.OwnIDCardNo.Value = this.txtOwnIDCardNo.Text.Trim();
                 bo.OwnName.Value = this.txtOwnName.Text.Trim();
@@ -237,6 +239,19 @@ namespace CWXT.JHSY.CWOneChildAward
                 bo.Memo.Value = this.txtMemo.Text.Trim();
 
                 bo.Update();
+
+                string strSql = string.Empty;
+
+                if (this.txtBirthDate.Text == "" && bo.BirthDate.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWOneChildAward SET BirthDate = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (strSql != string.Empty)
+                {
+                    Wicresoft.Session.Session session = new Wicresoft.Session.Session();
+
+                    session.SqlHelper.ExecuteNonQuery(strSql, CommandType.Text);
+                }
             }
         }
 
@@ -255,10 +270,12 @@ namespace CWXT.JHSY.CWOneChildAward
 
         private void AppendServerEvents()
         {
-            this.validatetxtCWID.ServerValidate += new ServerValidateEventHandler(validatetxtCWID_ServerValidate);
-            this.validatetxtBirthDate.ServerValidate += new ServerValidateEventHandler(validatetxtBirthDate_ServerValidate);
-            this.validatetxtRealMonth.ServerValidate += new ServerValidateEventHandler(validatetxtRealMonth_ServerValidate);
-            this.validatetxtAwardFee.ServerValidate += new ServerValidateEventHandler(validatetxtAwardFee_ServerValidate);
+            gpCWInfo.BusinessObjectViewName = "CWInfoDefaultView";
+
+            this.validateCWInfo.ServerValidate += new ServerValidateEventHandler(validateCWInfo_ServerValidate);
+            this.validateRealMonth.ServerValidate += new ServerValidateEventHandler(validateRealMonth_ServerValidate);
+            this.validateAwardFee.ServerValidate += new ServerValidateEventHandler(validateAwardFee_ServerValidate);
+            this.validateAwardYear.ServerValidate += new ServerValidateEventHandler(validateAwardYear_ServerValidate);
 
             BindForeignKeyData();
         }

@@ -25,7 +25,7 @@ namespace CWXT.JHSY.CWOneChild
 		{
 			if(this.ucCWOneChild.ValidatePage())
 			{
-                //ucCWOneChild.Update();
+                ucCWOneChild.Update();
 				base.GoBack("CWOneChildList.aspx");
 			}
 			return false;

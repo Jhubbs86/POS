@@ -30,6 +30,10 @@ namespace CWXT.JHSY.CWBirthInfo
         private void SetViewStatus()
         {
             GlobalFacade.Utils.SetReadonly(this);
+
+            txtBirthDate.Attributes.Remove("onfocus");
+            txtExpectDate.Attributes.Remove("onfocus");
+            gpCWInfo.Readonly = true;
         }
 
         private void SetEditStatus()
@@ -87,15 +91,17 @@ namespace CWXT.JHSY.CWBirthInfo
 
             if (bo.HaveRecord)
             {
-                this.txtCWID.Text = bo.FK_CWID.Value.ToString();
+                if (bo.FK_CWID.Value > 0)
+                    this.gpCWInfo.SelectedValue = bo.FK_CWID.Value.ToString();
                 this.txtChildName.Text = bo.ChildName.Value;
-                this.txtSex.Text = bo.Sex.Value.ToString();
-                if (bo.BirthDate.Value.ToString("yyyy-MM-dd") != "0001-01-01")
+                if (bo.Sex.Value > 0)
+                    this.ddlSex.SelectedValue = bo.Sex.Value.ToString();
+                if (bo.BirthDate.Value != DateTime.MinValue)
                     this.txtBirthDate.Text = bo.BirthDate.Value.ToString("yyyy-MM-dd");
-
                 this.txtBirthNo.Text = bo.BirthNo.Value;
-                this.txtIsPlan.Text = bo.IsPlan.Value.ToString();
-                if (bo.ExpectDate.Value.ToString("yyyy-MM-dd") != "0001-01-01")
+                if (bo.IsPlan.Value > 0)
+                    this.ddlIsPlan.SelectedValue = bo.IsPlan.Value.ToString();
+                if (bo.ExpectDate.Value != DateTime.MinValue)
                     this.txtExpectDate.Text = bo.ExpectDate.Value.ToString("yyyy-MM-dd");
 
                 this.txtChildAddress.Text = bo.ChildAddress.Value;
@@ -126,51 +132,32 @@ namespace CWXT.JHSY.CWBirthInfo
             return Page.IsValid;
         }
 
-        private void validatetxtCWID_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateCWInfo_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if()
-            //{
-            //    this.validatetxtCWID.ErrorMessage = "请选择所属村镇";
-            //    args.IsValid = false;
-            //    return;
-            //}
+            if (this.gpCWInfo.SelectedValue == string.Empty || this.gpCWInfo.SelectedValue == "0")
+            {
+                args.IsValid = false;
+                return;
+            }
         }
 
-        private void validatetxtSex_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateSex_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if (!string.IsNullOrEmpty(this.txtSex.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtSex.Text.Trim()))
-            //{
-            //    this.validatetxtSex.ErrorMessage = "性别只能为数字类型";
-            //    args.IsValid = false;
-            //}
+            if (this.ddlSex.SelectedValue == string.Empty || this.ddlSex.SelectedValue == "0")
+            {
+                args.IsValid = false;
+                return;
+            }
         }
 
-        private void validatetxtBirthDate_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateBirthNo_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if (!string.IsNullOrEmpty(this.txtBirthDate.Text.Trim()) && !GlobalFacade.Utils.IsDateTime(this.txtBirthDate.Text.Trim()))
-            //{
-            //    this.validatetxtBirthDate.ErrorMessage = "出生年月只能为数字类型";
-            //    args.IsValid = false;
-            //}
-        }
-
-        private void validatetxtIsPlan_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            //if (!string.IsNullOrEmpty(this.txtIsPlan.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtIsPlan.Text.Trim()))
-            //{
-            //    this.validatetxtIsPlan.ErrorMessage = "是否计划只能为数字类型";
-            //    args.IsValid = false;
-            //}
-        }
-
-        private void validatetxtExpectDate_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            //if (!string.IsNullOrEmpty(this.txtExpectDate.Text.Trim()) && !GlobalFacade.Utils.IsDateTime(this.txtExpectDate.Text.Trim()))
-            //{
-            //    this.validatetxtExpectDate.ErrorMessage = "预产期只能为数字类型";
-            //    args.IsValid = false;
-            //}
-        }
+            if (!string.IsNullOrEmpty(this.txtBirthNo.Text.Trim()))
+            {
+                BusinessRule.Common rule = new BusinessRule.Common();
+                args.IsValid = rule.IsFieldExclusive("BirthNo", this.txtBirthNo.Text.Trim(), "CWBirthInfo", true, this.PKID);
+            }
+        }        
         #endregion
 
         #region Save | Update
@@ -181,19 +168,19 @@ namespace CWXT.JHSY.CWBirthInfo
             BusinessMapping.CWBirthInfo bo = new BusinessMapping.CWBirthInfo();
             bo.SessionInstance = new Wicresoft.Session.Session();
 
-            if (this.txtCWID.Text.Trim() != "")
-                bo.FK_CWID.Value = Convert.ToInt32(this.txtCWID.Text.Trim());
+            if (this.gpCWInfo.SelectedValue != string.Empty && this.gpCWInfo.SelectedValue != "0")
+                bo.FK_CWID.Value = Convert.ToInt32(this.gpCWInfo.SelectedValue);
 
             bo.ChildName.Value = this.txtChildName.Text.Trim();
-            if (this.txtSex.Text.Trim() != "")
-                bo.Sex.Value = Convert.ToInt32(this.txtSex.Text.Trim());
+            if (this.ddlSex.SelectedValue != string.Empty && this.ddlSex.SelectedValue != "0")
+                bo.Sex.Value = Convert.ToInt32(this.ddlSex.SelectedValue);
 
             if (this.txtBirthDate.Text != "")
                 bo.BirthDate.Value = Convert.ToDateTime(this.txtBirthDate.Text);
 
             bo.BirthNo.Value = this.txtBirthNo.Text.Trim();
-            if (this.txtIsPlan.Text.Trim() != "")
-                bo.IsPlan.Value = Convert.ToInt32(this.txtIsPlan.Text.Trim());
+            if (this.ddlIsPlan.SelectedValue != string.Empty && this.ddlIsPlan.SelectedValue != "0")
+                bo.IsPlan.Value = Convert.ToInt32(this.ddlIsPlan.SelectedValue);
 
             if (this.txtExpectDate.Text != "")
                 bo.ExpectDate.Value = Convert.ToDateTime(this.txtExpectDate.Text);
@@ -233,19 +220,25 @@ namespace CWXT.JHSY.CWBirthInfo
             {
                 int userID = GlobalFacade.SystemContext.GetContext().UserID;
 
-                if (this.txtCWID.Text.Trim() != "")
-                    bo.FK_CWID.Value = Convert.ToInt32(this.txtCWID.Text.Trim());
+                if (this.gpCWInfo.SelectedValue != string.Empty && this.gpCWInfo.SelectedValue != "0")
+                    bo.FK_CWID.Value = Convert.ToInt32(this.gpCWInfo.SelectedValue);
+                else
+                    bo.FK_CWID.Value = 0;
 
                 bo.ChildName.Value = this.txtChildName.Text.Trim();
-                if (this.txtSex.Text.Trim() != "")
-                    bo.Sex.Value = Convert.ToInt32(this.txtSex.Text.Trim());
+                if (this.ddlSex.SelectedValue != string.Empty && this.ddlSex.SelectedValue != "0")
+                    bo.Sex.Value = Convert.ToInt32(this.ddlSex.SelectedValue);
+                else
+                    bo.Sex.Value = 0;
 
                 if (this.txtBirthDate.Text != "")
                     bo.BirthDate.Value = Convert.ToDateTime(this.txtBirthDate.Text);
 
                 bo.BirthNo.Value = this.txtBirthNo.Text.Trim();
-                if (this.txtIsPlan.Text.Trim() != "")
-                    bo.IsPlan.Value = Convert.ToInt32(this.txtIsPlan.Text.Trim());
+                if (this.ddlIsPlan.SelectedValue != string.Empty && this.ddlIsPlan.SelectedValue != "0")
+                    bo.IsPlan.Value = Convert.ToInt32(this.ddlIsPlan.SelectedValue);
+                else
+                    bo.IsPlan.Value = 0;
 
                 if (this.txtExpectDate.Text != "")
                     bo.ExpectDate.Value = Convert.ToDateTime(this.txtExpectDate.Text);
@@ -267,9 +260,46 @@ namespace CWXT.JHSY.CWBirthInfo
                 bo.Memo.Value = this.txtMemo.Text.Trim();
 
                 bo.Update();
+
+                string strSql = string.Empty;
+
+                if (this.txtBirthDate.Text == "" && bo.BirthDate.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWBirthInfo SET BirthDate = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (this.txtExpectDate.Text == "" && bo.ExpectDate.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWBirthInfo SET ExpectDate = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (strSql != string.Empty)
+                {
+                    Wicresoft.Session.Session session = new Wicresoft.Session.Session();
+
+                    session.SqlHelper.ExecuteNonQuery(strSql, CommandType.Text);
+                }
             }
         }
 
+        #endregion
+
+        #region 绑定下拉列表
+        public static void DictionaryList(System.Web.UI.WebControls.DropDownList DropOnDictionary, string type)
+        {
+            BusinessObjectCollection boc = new BusinessObjectCollection("Dictionary");
+            boc.SessionInstance = new Wicresoft.Session.Session();
+
+            BusinessFilter filter = new BusinessFilter("Dictionary");
+            filter.AddFilterItem("IsValid", "1", Operation.Equal, FilterType.NumberType, AndOr.AND);
+            filter.AddFilterItem("Type", type, Operation.Equal, FilterType.NumberType, AndOr.AND);
+
+            boc.AddFilter(filter);
+
+            DropOnDictionary.DataSource = boc.GetDataTable();
+            DropOnDictionary.DataTextField = "Name";
+            DropOnDictionary.DataValueField = "PKID";
+            DropOnDictionary.DataBind();
+            DropOnDictionary.Items.Insert(0, new ListItem(ResourceManager.Instance.GetString("PleaseSelect"), "0"));
+        }
         #endregion
 
         #region Web Form Designer generated code
@@ -285,18 +315,19 @@ namespace CWXT.JHSY.CWBirthInfo
 
         private void AppendServerEvents()
         {
-            this.validatetxtCWID.ServerValidate += new ServerValidateEventHandler(validatetxtCWID_ServerValidate);
-            this.validatetxtSex.ServerValidate += new ServerValidateEventHandler(validatetxtSex_ServerValidate);
-            this.validatetxtBirthDate.ServerValidate += new ServerValidateEventHandler(validatetxtBirthDate_ServerValidate);
-            this.validatetxtIsPlan.ServerValidate += new ServerValidateEventHandler(validatetxtIsPlan_ServerValidate);
-            this.validatetxtExpectDate.ServerValidate += new ServerValidateEventHandler(validatetxtExpectDate_ServerValidate);
+            gpCWInfo.BusinessObjectViewName = "CWInfoDefaultView";
+
+            this.validateCWInfo.ServerValidate += new ServerValidateEventHandler(validateCWInfo_ServerValidate);
+            this.validateSex.ServerValidate += new ServerValidateEventHandler(validateSex_ServerValidate);
+            this.validateBirthNo.ServerValidate += new ServerValidateEventHandler(validateBirthNo_ServerValidate);
 
             BindForeignKeyData();
         }
 
         private void BindForeignKeyData()
         {
-
+            DictionaryList(ddlSex, GlobalFacade.DictionaryType.Type_2.ToString());
+            DictionaryList(this.ddlIsPlan, GlobalFacade.DictionaryType.Type_5.ToString());
         }
         #endregion
     }

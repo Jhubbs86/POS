@@ -19,8 +19,8 @@ namespace BusinessView
             //vic.Add(new ViewItem("HelpType", "扶助类型", true, ""));
             //vic.Add(new ViewItem("RealMonth", "享受时间", true));
             //vic.Add(new ViewItem("HelpMoney", "享受金额", true));
-            //vic.Add(new ViewItem("HelpNo", "发放证编号", true));
-            //vic.Add(new ViewItem("HelpYear", "年份", true));
+            vic.Add(new ViewItem("HelpNo", "发放证编号", true));
+            vic.Add(new ViewItem("HelpYear", "年份", true));
 
             this.PKField = new ViewItem("PKID", "PKID");
 

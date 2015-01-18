@@ -30,6 +30,11 @@ namespace CWXT.JHSY.CWNewMarrige
         private void SetViewStatus()
         {
             GlobalFacade.Utils.SetReadonly(this);
+
+            txtMarrigeDate.Attributes.Remove("onfocus");
+            txtVillageDate.Attributes.Remove("onfocus");
+            txtExpectDate.Attributes.Remove("onfocus");
+            gpCWInfo.Readonly = true;
         }
 
         private void SetEditStatus()
@@ -87,7 +92,8 @@ namespace CWXT.JHSY.CWNewMarrige
 
             if (bo.HaveRecord)
             {
-                this.txtCWID.Text = bo.FK_CWID.Value.ToString();
+                if (bo.FK_CWID.Value > 0)
+                    this.gpCWInfo.SelectedValue = bo.FK_CWID.Value.ToString();
                 this.txtMaleIDCardNo.Text = bo.MaleIDCardNo.Value;
                 this.txtMaleName.Text = bo.MaleName.Value;
                 this.txtMaleAddress.Text = bo.MaleAddress.Value;
@@ -96,14 +102,16 @@ namespace CWXT.JHSY.CWNewMarrige
                 this.txtFemaleName.Text = bo.FemaleName.Value;
                 this.txtFemaleAddress.Text = bo.FemaleAddress.Value;
                 this.txtFemaleLinkPhone.Text = bo.FemaleLinkPhone.Value;
-                if (bo.MarrigeDate.Value.ToString("yyyy-MM-dd") != "0001-01-01")
+                if (bo.MarrigeDate.Value != DateTime.MinValue)
                     this.txtMarrigeDate.Text = bo.MarrigeDate.Value.ToString("yyyy-MM-dd");
 
-                this.txtIsPregnant.Text = bo.IsPregnant.Value.ToString();
-                if (bo.ExpectDate.Value.ToString("yyyy-MM-dd") != "0001-01-01")
+                if (bo.IsPregnant.Value > 0)
+                    this.ddlIsPregnant.SelectedValue = bo.IsPregnant.Value.ToString();
+
+                if (bo.ExpectDate.Value != DateTime.MinValue)
                     this.txtExpectDate.Text = bo.ExpectDate.Value.ToString("yyyy-MM-dd");
 
-                if (bo.VillageDate.Value.ToString("yyyy-MM-dd") != "0001-01-01")
+                if (bo.VillageDate.Value != DateTime.MinValue)
                     this.txtVillageDate.Text = bo.VillageDate.Value.ToString("yyyy-MM-dd");
 
                 this.txtMarrigeNo.Text = bo.MarrigeNo.Value;
@@ -124,50 +132,22 @@ namespace CWXT.JHSY.CWNewMarrige
             return Page.IsValid;
         }
 
-        private void validatetxtCWID_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateCWInfo_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if()
-            //{
-            //    this.validatetxtCWID.ErrorMessage = "请选择所属村镇";
-            //    args.IsValid = false;
-            //    return;
-            //}
+            if (this.gpCWInfo.SelectedValue == string.Empty || this.gpCWInfo.SelectedValue == "0")
+            {
+                args.IsValid = false;
+                return;
+            }
         }
 
-        private void validatetxtMarrigeDate_ServerValidate(object source, ServerValidateEventArgs args)
+        private void validateMarrigeNo_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            //if(!string.IsNullOrEmpty(this.txtMarrigeDate.Text.Trim()) && !GlobalFacade.Utils.IsDateTime(this.txtMarrigeDate.Text.Trim()))
-            //{
-            //    this.validatetxtMarrigeDate.ErrorMessage = "结婚登记日期只能为数字类型";
-            //    args.IsValid = false;
-            //}
-        }
-
-        private void validatetxtIsPregnant_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            //if(!string.IsNullOrEmpty(this.txtIsPregnant.Text.Trim()) && !GlobalFacade.Utils.IsInt(this.txtIsPregnant.Text.Trim()))
-            //{
-            //    this.validatetxtIsPregnant.ErrorMessage = "是否怀孕只能为数字类型";
-            //    args.IsValid = false;
-            //}
-        }
-
-        private void validatetxtExpectDate_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            //if(!string.IsNullOrEmpty(this.txtExpectDate.Text.Trim()) && !GlobalFacade.Utils.IsDateTime(this.txtExpectDate.Text.Trim()))
-            //{
-            //    this.validatetxtExpectDate.ErrorMessage = "预产期只能为数字类型";
-            //    args.IsValid = false;
-            //}
-        }
-
-        private void validatetxtVillageDate_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            //if(!string.IsNullOrEmpty(this.txtVillageDate.Text.Trim()) && !GlobalFacade.Utils.IsDateTime(this.txtVillageDate.Text.Trim()))
-            //{
-            //    this.validatetxtVillageDate.ErrorMessage = "村委登记日期只能为数字类型";
-            //    args.IsValid = false;
-            //}
+            if (!string.IsNullOrEmpty(this.txtMarrigeNo.Text.Trim()))
+            {
+                BusinessRule.Common rule = new BusinessRule.Common();
+                args.IsValid = rule.IsFieldExclusive("MarrigeNo", this.txtMarrigeNo.Text.Trim(), "CWNewMarrige", true, this.PKID);
+            }
         }
         #endregion
 
@@ -179,9 +159,8 @@ namespace CWXT.JHSY.CWNewMarrige
             BusinessMapping.CWNewMarrige bo = new BusinessMapping.CWNewMarrige();
             bo.SessionInstance = new Wicresoft.Session.Session();
 
-            if (this.txtCWID.Text.Trim() != "")
-                bo.FK_CWID.Value = Convert.ToInt32(this.txtCWID.Text.Trim());
-
+            if (this.gpCWInfo.SelectedValue != string.Empty && this.gpCWInfo.SelectedValue != "0")
+                bo.FK_CWID.Value = Convert.ToInt32(this.gpCWInfo.SelectedValue);
             bo.MaleIDCardNo.Value = this.txtMaleIDCardNo.Text.Trim();
             bo.MaleName.Value = this.txtMaleName.Text.Trim();
             bo.MaleAddress.Value = this.txtMaleAddress.Text.Trim();
@@ -193,8 +172,8 @@ namespace CWXT.JHSY.CWNewMarrige
             if (this.txtMarrigeDate.Text != "")
                 bo.MarrigeDate.Value = Convert.ToDateTime(this.txtMarrigeDate.Text);
 
-            if (this.txtIsPregnant.Text.Trim() != "")
-                bo.IsPregnant.Value = Convert.ToInt32(this.txtIsPregnant.Text.Trim());
+            if (this.ddlIsPregnant.SelectedValue != string.Empty && this.ddlIsPregnant.SelectedValue != "0")
+                bo.IsPregnant.Value = Convert.ToInt32(this.ddlIsPregnant.SelectedValue);
 
             if (this.txtExpectDate.Text != "")
                 bo.ExpectDate.Value = Convert.ToDateTime(this.txtExpectDate.Text);
@@ -226,9 +205,10 @@ namespace CWXT.JHSY.CWNewMarrige
             {
                 int userID = GlobalFacade.SystemContext.GetContext().UserID;
 
-                if (this.txtCWID.Text.Trim() != "")
-                    bo.FK_CWID.Value = Convert.ToInt32(this.txtCWID.Text.Trim());
-
+                if (this.gpCWInfo.SelectedValue != string.Empty && this.gpCWInfo.SelectedValue != "0")
+                    bo.FK_CWID.Value = Convert.ToInt32(this.gpCWInfo.SelectedValue);
+                else
+                    bo.FK_CWID.Value = 0;
                 bo.MaleIDCardNo.Value = this.txtMaleIDCardNo.Text.Trim();
                 bo.MaleName.Value = this.txtMaleName.Text.Trim();
                 bo.MaleAddress.Value = this.txtMaleAddress.Text.Trim();
@@ -240,8 +220,10 @@ namespace CWXT.JHSY.CWNewMarrige
                 if (this.txtMarrigeDate.Text != "")
                     bo.MarrigeDate.Value = Convert.ToDateTime(this.txtMarrigeDate.Text);
 
-                if (this.txtIsPregnant.Text.Trim() != "")
-                    bo.IsPregnant.Value = Convert.ToInt32(this.txtIsPregnant.Text.Trim());
+                if (this.ddlIsPregnant.SelectedValue != string.Empty && this.ddlIsPregnant.SelectedValue != "0")
+                    bo.IsPregnant.Value = Convert.ToInt32(this.ddlIsPregnant.SelectedValue);
+                else
+                    bo.IsPregnant.Value = 0;
 
                 if (this.txtExpectDate.Text != "")
                     bo.ExpectDate.Value = Convert.ToDateTime(this.txtExpectDate.Text);
@@ -254,9 +236,50 @@ namespace CWXT.JHSY.CWNewMarrige
                 bo.Memo.Value = this.txtMemo.Text.Trim();
 
                 bo.Update();
+
+                string strSql = string.Empty;
+
+                if (this.txtMarrigeDate.Text == "" && bo.MarrigeDate.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWNewMarrige SET MarrigeDate = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (this.txtExpectDate.Text == "" && bo.ExpectDate.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWNewMarrige SET ExpectDate = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (this.txtVillageDate.Text == "" && bo.VillageDate.Value != DateTime.MinValue)
+                {
+                    strSql += string.Format("UPDATE CWNewMarrige SET VillageDate = NULL WHERE PKID = {0}; ", this.PKID);
+                }
+                if (strSql != string.Empty)
+                {
+                    Wicresoft.Session.Session session = new Wicresoft.Session.Session();
+
+                    session.SqlHelper.ExecuteNonQuery(strSql, CommandType.Text);
+                }
             }
         }
 
+        #endregion
+
+        #region 绑定下拉列表
+        public static void DictionaryList(System.Web.UI.WebControls.DropDownList DropOnDictionary, string type)
+        {
+            BusinessObjectCollection boc = new BusinessObjectCollection("Dictionary");
+            boc.SessionInstance = new Wicresoft.Session.Session();
+
+            BusinessFilter filter = new BusinessFilter("Dictionary");
+            filter.AddFilterItem("IsValid", "1", Operation.Equal, FilterType.NumberType, AndOr.AND);
+            filter.AddFilterItem("Type", type, Operation.Equal, FilterType.NumberType, AndOr.AND);
+
+            boc.AddFilter(filter);
+
+            DropOnDictionary.DataSource = boc.GetDataTable();
+            DropOnDictionary.DataTextField = "Name";
+            DropOnDictionary.DataValueField = "PKID";
+            DropOnDictionary.DataBind();
+            DropOnDictionary.Items.Insert(0, new ListItem(ResourceManager.Instance.GetString("PleaseSelect"), "0"));
+        }
         #endregion
 
         #region Web Form Designer generated code
@@ -272,18 +295,17 @@ namespace CWXT.JHSY.CWNewMarrige
 
         private void AppendServerEvents()
         {
-            this.validatetxtCWID.ServerValidate += new ServerValidateEventHandler(validatetxtCWID_ServerValidate);
-            this.validatetxtMarrigeDate.ServerValidate += new ServerValidateEventHandler(validatetxtMarrigeDate_ServerValidate);
-            this.validatetxtIsPregnant.ServerValidate += new ServerValidateEventHandler(validatetxtIsPregnant_ServerValidate);
-            this.validatetxtExpectDate.ServerValidate += new ServerValidateEventHandler(validatetxtExpectDate_ServerValidate);
-            this.validatetxtVillageDate.ServerValidate += new ServerValidateEventHandler(validatetxtVillageDate_ServerValidate);
+            gpCWInfo.BusinessObjectViewName = "CWInfoDefaultView";
+
+            this.validateCWInfo.ServerValidate += new ServerValidateEventHandler(validateCWInfo_ServerValidate);
+            this.validateMarrigeNo.ServerValidate += new ServerValidateEventHandler(validateMarrigeNo_ServerValidate);
 
             BindForeignKeyData();
         }
 
         private void BindForeignKeyData()
         {
-
+            DictionaryList(ddlIsPregnant, GlobalFacade.DictionaryType.Type_5.ToString());
         }
         #endregion
     }

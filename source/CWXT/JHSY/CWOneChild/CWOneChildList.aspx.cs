@@ -48,7 +48,7 @@ namespace CWXT.JHSY.CWOneChild
         {
             int totalCount = 0;
             BusinessRule.JHSY.CWOneChild rule = new BusinessRule.JHSY.CWOneChild();
-            this.tblSchema = rule.GetCWOneChildList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.DESC, this.GetLastQueryCondition(this.dgCWOneChild.UniqueID));
+            this.tblSchema = rule.GetCWOneChildList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.ASC, this.GetLastQueryCondition(this.dgCWOneChild.UniqueID));
             ucCustomPaging.TotalRecords = totalCount;
 
             this.BindGrid();

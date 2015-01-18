@@ -48,7 +48,7 @@ namespace CWXT.JHSY.CWOneChildAward
         {
             int totalCount = 0;
             BusinessRule.JHSY.CWOneChildAward rule = new BusinessRule.JHSY.CWOneChildAward();
-            this.tblSchema = rule.GetCWOneChildAwardList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.DESC, this.GetLastQueryCondition(this.dgCWOneChildAward.UniqueID));
+            this.tblSchema = rule.GetCWOneChildAwardList(out totalCount, pageSize, pageNumber, BusinessRule.Common.OrderByType.ASC, this.GetLastQueryCondition(this.dgCWOneChildAward.UniqueID));
             ucCustomPaging.TotalRecords = totalCount;
 
             this.BindGrid();
@@ -186,14 +186,14 @@ namespace CWXT.JHSY.CWOneChildAward
 
         private void AppendServerEvents()
         {
-            //this.btnNew.Click += new System.Web.UI.ImageClickEventHandler(this.btnNew_Click);
-            //this.btnEdit.Click += new System.Web.UI.ImageClickEventHandler(this.btnEdit_Click);
-            //this.btnDel.Click += new System.Web.UI.ImageClickEventHandler(this.btnDel_Click);
-            //this.btnView.Click += new System.Web.UI.ImageClickEventHandler(this.btnView_Click);
+            this.btnNew.Click += new System.Web.UI.ImageClickEventHandler(this.btnNew_Click);
+            this.btnEdit.Click += new System.Web.UI.ImageClickEventHandler(this.btnEdit_Click);
+            this.btnDel.Click += new System.Web.UI.ImageClickEventHandler(this.btnDel_Click);
+            this.btnView.Click += new System.Web.UI.ImageClickEventHandler(this.btnView_Click);
             this.btnRefreshData.Click += new EventHandler(btnRefreshData_Click);
             this.btnQuery.ButtonClick += new Microsoft.Web.UI.WebControls.ToolbarItemEventHandler(btnQuery_ButtonClick);
             this.dgCWOneChildAward.PreRender += new EventHandler(dgCWOneChildAward_PreRender);
-            //this.btnDel.Attributes.Add("onclick", "return ImgBtnConfirmDelete()");
+            this.btnDel.Attributes.Add("onclick", "return ImgBtnConfirmDelete()");
 
             // 分页控件初始化
             this.ucCustomPaging.DataLoader = new CustomControls.CustomPaging.LoadDataHandler(this.LoadData);

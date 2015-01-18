@@ -60,21 +60,21 @@
                                         </asp:TemplateColumn>
                                         <asp:BoundColumn DataField="PKID" Visible="False"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="CWVillageName" HeaderText="所属村镇"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="MarrigeNo" HeaderText="结婚登记证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="MaleIDCardNo" HeaderText="男方身份证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="MaleName" HeaderText="男方姓名"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="MaleAddress" HeaderText="男方户籍地址"></asp:BoundColumn>
+                                        <%--<asp:BoundColumn DataField="MaleAddress" HeaderText="男方户籍地址"></asp:BoundColumn>--%>
                                         <asp:BoundColumn DataField="MaleLinkPhone" HeaderText="男方联系方式"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="FemaleIDCardNo" HeaderText="女方身份证号"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="FemaleName" HeaderText="女方姓名"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="FemaleAddress" HeaderText="女方户籍地址"></asp:BoundColumn>
+                                       <%-- <asp:BoundColumn DataField="FemaleAddress" HeaderText="女方户籍地址"></asp:BoundColumn>--%>
                                         <asp:BoundColumn DataField="FemaleLinkPhone" HeaderText="女方联系方式"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="MarrigeDate" HeaderText="结婚登记日期" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="IsPregnant" HeaderText="是否怀孕"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="IsPregnantInfo" HeaderText="是否怀孕"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="ExpectDate" HeaderText="预产期" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="VillageDate" HeaderText="村委登记日期" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="MarrigeNo" HeaderText="结婚登记证号"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="CreateUser" HeaderText="创建人"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="CreateTime" HeaderText="创建时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>
+                                        <%--<asp:BoundColumn DataField="CreateUserName" HeaderText="创建人"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="CreateTime" HeaderText="创建时间" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"></asp:BoundColumn>--%>
                                     </Columns>
                                 </asp:DataGrid>
                                 <uccs:CustomPaging ID="ucCustomPaging" runat="server"></uccs:CustomPaging>

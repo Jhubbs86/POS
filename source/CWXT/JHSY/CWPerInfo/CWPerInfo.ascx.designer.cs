@@ -319,15 +319,6 @@ namespace CWXT.JHSY.CWPerInfo {
         protected global::System.Web.UI.WebControls.TextBox txtChildIDCardNo1;
         
         /// <summary>
-        /// txtChildAddress1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtChildAddress1;
-        
-        /// <summary>
         /// txtBirthNo1 控件。
         /// </summary>
         /// <remarks>
@@ -355,6 +346,15 @@ namespace CWXT.JHSY.CWPerInfo {
         protected global::System.Web.UI.WebControls.TextBox txtAdoptNo1;
         
         /// <summary>
+        /// txtChildAddress1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtChildAddress1;
+        
+        /// <summary>
         /// txtChildName2 控件。
         /// </summary>
         /// <remarks>
@@ -371,15 +371,6 @@ namespace CWXT.JHSY.CWPerInfo {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtChildIDCardNo2;
-        
-        /// <summary>
-        /// txtChildAddress2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtChildAddress2;
         
         /// <summary>
         /// txtBirthNo2 控件。
@@ -409,6 +400,15 @@ namespace CWXT.JHSY.CWPerInfo {
         protected global::System.Web.UI.WebControls.TextBox txtAdoptNo2;
         
         /// <summary>
+        /// txtChildAddress2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtChildAddress2;
+        
+        /// <summary>
         /// txtChildName3 控件。
         /// </summary>
         /// <remarks>
@@ -425,15 +425,6 @@ namespace CWXT.JHSY.CWPerInfo {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtChildIDCardNo3;
-        
-        /// <summary>
-        /// txtChildAddress3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtChildAddress3;
         
         /// <summary>
         /// txtBirthNo3 控件。
@@ -461,6 +452,15 @@ namespace CWXT.JHSY.CWPerInfo {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAdoptNo3;
+        
+        /// <summary>
+        /// txtChildAddress3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtChildAddress3;
         
         /// <summary>
         /// txtMemo 控件。

@@ -73,6 +73,10 @@ namespace GlobalFacade
         /// 子女情况
         /// </summary>
         public static int Type_8 = 8;
+        /// <summary>
+        /// 扶助类型
+        /// </summary>
+        public static int Type_9 = 9;
     }
 
 	public class UIStyle

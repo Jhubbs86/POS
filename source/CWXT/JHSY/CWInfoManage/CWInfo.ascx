@@ -59,13 +59,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="FieldTop">
+                    <td class="Field">
                         <nobr>地理位置</nobr>
                     </td>
                     <td style="width:50%;">
                         <asp:TextBox ID="txtLocation" runat="server" Width="80%" TextMode="MultiLine" Height="50" MaxLength="255"></asp:TextBox>
                     </td>
-                    <td class="FieldTop">
+                    <td class="Field">
                         <nobr>备注</nobr>
                     </td>
                     <td style="width:50%;">
