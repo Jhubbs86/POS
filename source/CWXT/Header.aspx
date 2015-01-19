@@ -15,7 +15,7 @@
 
 <body leftmargin="0" topmargin="0">
     <form id="Form1" method="post" runat="server">
-        <table cellpadding="0" cellspacing="0" border="0" width="100%" height="59" style="background-image: url(image/head_bg.gif); background-repeat: repeat;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" height="89" style="background-image: url(image/head_bg.gif); background-repeat: repeat;">
             <tr>
                 <td>
                     <div id="divContainer" runat="server">

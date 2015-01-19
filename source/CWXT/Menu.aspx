@@ -22,7 +22,7 @@
             }
             else {
                 showTopBanner = true;
-                window.top.topFrame.rows = "59,*";
+                window.top.topFrame.rows = "89,*";
                 topBannerDicrection.src = "image/toUp.gif";
                 topBannerDicrection.title = topBannerDicrection.showtitle;
             }
